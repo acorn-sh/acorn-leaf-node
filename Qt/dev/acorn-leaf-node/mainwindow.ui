@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1100</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ACORN SH</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="topBarLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SizeConstraint::SetMinimumSize</enum>
+      </property>
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="dashboardButton">
+        <property name="text">
+         <string>Dashboard</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="settingsButton">
+        <property name="text">
+         <string>Debug</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="balanceButton">
+        <property name="text">
+         <string>Balance: $1,000</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <widget class="QWidget" name="dashboardPage">
+       <layout class="QVBoxLayout" name="dashboardLayout">
+        <item>
+         <widget class="QTableWidget" name="containerTable">
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+          </property>
+          <column>
+           <property name="text">
+            <string>Container Name</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Description</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Status</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Time</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Timer</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>CPU</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>GPU</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>HDD</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>NET</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Profitability</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Income</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="terminal">
+          <property name="styleSheet">
+           <string>
+            background-color: black;
+            color: white;
+           </string>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="plainText">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="settingsPage">
+       <layout class="QVBoxLayout" name="settingsLayout">
+        <item>
+         <widget class="QLabel" name="pythonLabel">
+          <property name="text">
+           <string>Python Version:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="checkPythonButton">
+          <property name="text">
+           <string>Check Python Version</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="web3StatusLabel">
+          <property name="text">
+           <string>Web3 Status:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="checkWeb3Button">
+          <property name="text">
+           <string>Check Web3 Connection</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="addressLabel">
+          <property name="text">
+           <string>Ethereum Address: </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="balanceLabel">
+          <property name="text">
+           <string>Balance: </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="checkBalanceButton">
+          <property name="text">
+           <string>Check Balance</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="dockerInstallLabel">
+          <property name="text">
+           <string>Docker Install Status:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="checkDockerInstallButton">
+          <property name="text">
+           <string>Check Docker Install</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="balancePage">
+       <layout class="QVBoxLayout" name="balanceLayout"/>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1100</width>
+     <height>37</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

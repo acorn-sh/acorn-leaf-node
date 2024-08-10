@@ -1,0 +1,36 @@
+{
+	"BUILD_DIR" : "/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug/acorn-leaf-node_autogen",
+	"CMAKE_BINARY_DIR" : "/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node",
+	"CMAKE_SOURCE_DIR" : "/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug/acorn-leaf-node_autogen/include",
+	"INPUTS" : 
+	[
+		"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/check_docker.py",
+		"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/check_balance.py",
+		"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/check_web3py.py",
+		"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/check_python.py",
+		"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/images/install_inactive.png",
+		"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/images/stop.png",
+		"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/images/play_inactive.png",
+		"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/images/pause.png",
+		"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/images/install.png",
+		"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/images/stop_inactive.png",
+		"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/images/play.png",
+		"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/images/pause_inactive.png"
+	],
+	"LOCK_FILE" : "/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug/CMakeFiles/acorn-leaf-node_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "/Users/platon1/DEV/Qt/6.7.2/macos/./libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug/CMakeFiles/acorn-leaf-node_autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/resources.qrc",
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

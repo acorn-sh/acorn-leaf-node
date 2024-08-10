@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <!-- Images -->
+        <file>images/play.png</file>
+        <file>images/stop.png</file>
+        <file>images/pause.png</file>
+        <file>images/install.png</file>
+        <file>images/install_inactive.png</file>
+        <file>images/pause_inactive.png</file>
+        <file>images/play_inactive.png</file>
+        <file>images/stop_inactive.png</file>
+
+        <!-- Python scripts -->
+        <file>check_balance.py</file>
+        <file>check_web3py.py</file>
+        <file>check_python.py</file>
+	<file>check_docker.py</file>
+    </qresource>
+</RCC>
