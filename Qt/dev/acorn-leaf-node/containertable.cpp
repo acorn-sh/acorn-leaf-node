@@ -12,6 +12,7 @@ void ContainerTable::setupTable()
     QStringList headers = {"Container Name", "Description", "Status", "Time", "Timer", "CPU", "GPU", "HDD", "NET", "Rate", "Income"};
     ui->containerTable->setColumnCount(headers.size());
     ui->containerTable->setHorizontalHeaderLabels(headers);
+    ui->containerTable->setStyleSheet("background-color: #d5d3e0; color: black;");
 
     // Ensure the table is read-only but selectable
     ui->containerTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -32,7 +33,7 @@ void ContainerTable::setupTable()
     }
 
     // Set minimum width for columns
-    ui->containerTable->horizontalHeader()->setMinimumSectionSize(50);
+    ui->containerTable->horizontalHeader()->setMinimumSectionSize(70);
 
     // Adjust column widths to fit table width
     adjustColumnWidths();
@@ -114,52 +115,44 @@ void ContainerTable::addControlButtons(int row, const QString &activeStatus)
     QWidget* pWidget = new QWidget();
     QHBoxLayout* pLayout = new QHBoxLayout(pWidget);
     pLayout->setAlignment(Qt::AlignCenter);
-    pLayout->setContentsMargins(0, 0, 0, 0);
-    pLayout->setSpacing(1); // Set spacing between buttons
+    pLayout->setContentsMargins(2, 0, 2, 0);
+    pLayout->setSpacing(5);
 
     QPushButton* btnPlay = new QPushButton();
     QPushButton* btnStop = new QPushButton();
     QPushButton* btnPause = new QPushButton();
-    QPushButton* btnInstall = new QPushButton();
 
     // Set icons
     btnPlay->setIcon(QIcon(":/images/play.png"));
     btnStop->setIcon(QIcon(":/images/stop.png"));
     btnPause->setIcon(QIcon(":/images/pause.png"));
-    btnInstall->setIcon(QIcon(":/images/install.png"));
-
+\
     // Set button sizes
-    btnPlay->setFixedSize(32, 32);
-    btnStop->setFixedSize(32, 32);
-    btnPause->setFixedSize(32, 32);
-    btnInstall->setFixedSize(32, 32);
-
+    btnPlay->setFixedSize(24, 24);
+    btnStop->setFixedSize(24, 24);
+    btnPause->setFixedSize(24, 24);
     // Set styles for active and inactive buttons
     QString activeStyle = "QPushButton { border-radius: 0px; }";
-    QString inactiveStyle = "QPushButton { border-radius: 0px; color: gray; }";
+    QString inactiveStyle = "QPushButton { border-radius: 0px; color: #6d6781; }";
 
     btnPlay->setStyleSheet(activeStatus == "Play" ? activeStyle : inactiveStyle);
     btnStop->setStyleSheet(activeStatus == "Stop" ? activeStyle : inactiveStyle);
     btnPause->setStyleSheet(activeStatus == "Pause" ? activeStyle : inactiveStyle);
-    btnInstall->setStyleSheet(activeStatus == "Install" ? activeStyle : inactiveStyle);
 
     // Set grayscale icons for inactive buttons
     if (activeStatus != "Play") btnPlay->setIcon(QIcon(":/images/play_inactive.png"));
     if (activeStatus != "Stop") btnStop->setIcon(QIcon(":/images/stop_inactive.png"));
     if (activeStatus != "Pause") btnPause->setIcon(QIcon(":/images/pause_inactive.png"));
-    if (activeStatus != "Install") btnInstall->setIcon(QIcon(":/images/install_inactive.png"));
 
     // Connect button signals to slots
     connect(btnPlay, &QPushButton::clicked, this, [this, row](){ handlePlay(row); });
     connect(btnStop, &QPushButton::clicked, this, [this, row](){ handleStop(row); });
     connect(btnPause, &QPushButton::clicked, this, [this, row](){ handlePause(row); });
-    connect(btnInstall, &QPushButton::clicked, this, [this, row](){ handleInstall(row); });
 
     // Add buttons to layout
     pLayout->addWidget(btnPlay);
     pLayout->addWidget(btnStop);
     pLayout->addWidget(btnPause);
-    pLayout->addWidget(btnInstall);
     pWidget->setLayout(pLayout);
 
     ui->containerTable->setCellWidget(row, 2, pWidget);
@@ -187,6 +180,3 @@ void ContainerTable::handlePause(int row) {
     // Implement what should happen when the pause button is clicked
 }
 
-void ContainerTable::handleInstall(int row) {
-    // Implement what should happen when the install button is clicked
-}

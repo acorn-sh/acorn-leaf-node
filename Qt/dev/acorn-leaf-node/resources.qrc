@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <!-- Images -->
         <file>images/play.png</file>
         <file>images/stop.png</file>
         <file>images/pause.png</file>
@@ -9,11 +8,45 @@
         <file>images/pause_inactive.png</file>
         <file>images/play_inactive.png</file>
         <file>images/stop_inactive.png</file>
-
-        <!-- Python scripts -->
+        <file>images/icons/check.svg</file>
+        <file>images/icons/chevron-down.svg</file>
+        <file>images/icons/chevron-left.svg</file>
+        <file>images/icons/chevron-right.svg</file>
+        <file>images/icons/chevron-up.svg</file>
+        <file>images/icons/clipboard.svg</file>
+        <file>images/icons/clock.svg</file>
+        <file>images/icons/cloud.svg</file>
+        <file>images/icons/cpu.svg</file>
+        <file>images/icons/database.svg</file>
+        <file>images/icons/download.svg</file>
+        <file>images/icons/globe.svg</file>
+        <file>images/icons/hard-drive.svg</file>
+        <file>images/icons/heart.svg</file>
+        <file>images/icons/help-circle.svg</file>
+        <file>images/icons/home.svg</file>
+        <file>images/icons/key.svg</file>
+        <file>images/icons/link.svg</file>
+        <file>images/icons/lock.svg</file>
+        <file>images/icons/map.svg</file>
+        <file>images/icons/menu.svg</file>
+        <file>images/icons/moon.svg</file>
+        <file>images/icons/navigation.svg</file>
+        <file>images/icons/play.svg</file>
+        <file>images/icons/power.svg</file>
+        <file>images/icons/search.svg</file>
+        <file>images/icons/server.svg</file>
+        <file>images/icons/settings.svg</file>
+        <file>images/icons/share.svg</file>
+        <file>images/icons/sun.svg</file>
+        <file>images/icons/twitter.svg</file>
+        <file>images/icons/user.svg</file>
+        <file>images/icons/x.svg</file>
+        <file>images/icons/youtube.svg</file>
         <file>check_balance.py</file>
         <file>check_web3py.py</file>
         <file>check_python.py</file>
-	<file>check_docker.py</file>
+        <file>check_docker.py</file>
+        <file>check_account.py</file>
+        <file>fetch_acornsh_docker_hub.py</file>
     </qresource>
 </RCC>

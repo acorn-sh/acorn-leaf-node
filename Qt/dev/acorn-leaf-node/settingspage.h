@@ -16,7 +16,7 @@ public:
 private slots:
     void onCheckPythonVersionClicked();
     void onCheckWeb3Clicked();
-    void onCheckBalanceClicked();
+    void onCheckAccountClicked();
     void onCheckDockerInstallClicked();
 
 private:

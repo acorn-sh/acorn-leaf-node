@@ -28,6 +28,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(acorn-leaf-node
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        hubpage.h hubpage.cpp
+        helppage.h helppage.cpp
     )
 else()
     if(ANDROID)
@@ -66,6 +68,8 @@ add_custom_command(TARGET acorn-leaf-node POST_BUILD
         ${CMAKE_SOURCE_DIR}/check_web3py.py
         ${CMAKE_SOURCE_DIR}/check_balance.py
         ${CMAKE_SOURCE_DIR}/check_docker.py
+        ${CMAKE_SOURCE_DIR}/check_account.py
+        ${CMAKE_SOURCE_DIR}/fetch_acornsh_docker_hub.py
         $<TARGET_FILE_DIR:acorn-leaf-node>
 )
 

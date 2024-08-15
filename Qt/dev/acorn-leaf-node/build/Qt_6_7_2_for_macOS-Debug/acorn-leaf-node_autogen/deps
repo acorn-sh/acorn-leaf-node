@@ -6,6 +6,7 @@ acorn-leaf-node_autogen/timestamp: \
 	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/AvailabilityVersions.h \
 	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/TargetConditionals.h \
 	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_ctermid.h \
+	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_ctype.h \
 	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_stdio.h \
 	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_types.h \
 	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_types/_intmax_t.h \
@@ -24,6 +25,7 @@ acorn-leaf-node_autogen/timestamp: \
 	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/arm/signal.h \
 	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/arm/types.h \
 	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/assert.h \
+	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/ctype.h \
 	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/libkern/_OSByteOrder.h \
 	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/libkern/arm/OSByteOrder.h \
 	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/limits.h \
@@ -38,6 +40,7 @@ acorn-leaf-node_autogen/timestamp: \
 	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/malloc/_malloc.h \
 	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/malloc/_malloc_type.h \
 	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/malloc/_ptrcheck.h \
+	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/runetype.h \
 	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/stddef.h \
 	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/stdint.h \
 	/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/stdio.h \
@@ -97,6 +100,10 @@ acorn-leaf-node_autogen/timestamp: \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug/acorn-leaf-node_autogen/moc_predefs.h \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/containertable.cpp \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/containertable.h \
+	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/helppage.cpp \
+	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/helppage.h \
+	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/hubpage.cpp \
+	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/hubpage.h \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/main.cpp \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/mainbuttons.cpp \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/mainbuttons.h \
@@ -108,6 +115,8 @@ acorn-leaf-node_autogen/timestamp: \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/terminal.cpp \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/terminal.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QObject \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QSettings \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QTimer \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/q20functional.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/q20memory.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/q20type_traits.h \
@@ -121,6 +130,7 @@ acorn-leaf-node_autogen/timestamp: \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qatomic.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qatomic_cxx11.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qbasicatomic.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qbasictimer.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qbindingstorage.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qbytearray.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qbytearrayalgorithms.h \
@@ -182,6 +192,7 @@ acorn-leaf-node_autogen/timestamp: \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qscopedpointer.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qscopeguard.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qset.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qsettings.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qshareddata.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qshareddata_impl.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qsharedpointer.h \
@@ -210,6 +221,7 @@ acorn-leaf-node_autogen/timestamp: \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtdeprecationmarkers.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtenvironmentvariables.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtextstream.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtimer.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtmetamacros.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtnoop.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtpreprocessorsupport.h \
@@ -253,8 +265,13 @@ acorn-leaf-node_autogen/timestamp: \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtransform.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QCheckBox \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QDialog \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QLabel \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QMainWindow \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qabstractbutton.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qcheckbox.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qdialog.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qframe.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qlabel.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qmainwindow.h \
@@ -430,35 +447,94 @@ acorn-leaf-node_autogen/timestamp: \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeCXXCompiler.cmake.in \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeCXXCompilerABI.cpp \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeCXXInformation.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeCommonLanguageInclude.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeCompilerIdDetection.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeDetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeDetermineCompilerABI.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeDetermineCompilerId.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeDetermineSystem.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeFindBinUtils.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeFindDependencyMacro.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeGenericSystem.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeInitializeConfigs.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeLanguageInformation.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeNinjaFindMake.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeSystem.cmake.in \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeSystemSpecificInformation.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeTestCXXCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeTestCompilerCommon.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CheckCXXCompilerFlag.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CheckCXXSourceCompiles.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CheckIncludeFileCXX.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CheckLibraryExists.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/AppleClang-CXX.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/Clang.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/CrayClang-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/GNU.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/OrangeC-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/TIClang-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/FindOpenGL.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/FindPackageHandleStandardArgs.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/FindPackageMessage.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/FindThreads.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/GNUInstallDirs.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Internal/CheckCompilerFlag.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Internal/CheckSourceCompiles.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Internal/FeatureTesting.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/MacroAddFileDependencies.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Platform/Apple-Clang.cmake \
+	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Platform/Darwin-Determine-CXX.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Platform/Darwin-Initialize.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Platform/Darwin.cmake \
 	/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/Platform/UnixPaths.cmake \

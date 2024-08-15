@@ -1,0 +1,24 @@
+<ui version="4.0">
+ <class>SettingsPage</class>
+ <widget class="QWidget" name="settingsPage">
+  <layout class="QVBoxLayout" name="settingsLayout">
+   <item>
+    <widget class="QLabel" name="pythonLabel">
+     <property name="text">
+      <string>Python Version:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="checkPythonButton">
+     <property name="text">
+      <string>Check Python Version</string>
+     </property>
+    </widget>
+   </item>
+   <!-- Add other settings widgets here -->
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

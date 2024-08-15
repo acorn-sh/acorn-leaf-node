@@ -18,7 +18,7 @@ void SettingsPage::setupConnections(QObject *mainWindow)
 {
     connect(ui->checkPythonButton, &QPushButton::clicked, this, &SettingsPage::onCheckPythonVersionClicked);
     connect(ui->checkWeb3Button, &QPushButton::clicked, this, &SettingsPage::onCheckWeb3Clicked);
-    connect(ui->checkBalanceButton, &QPushButton::clicked, this, &SettingsPage::onCheckBalanceClicked);
+    connect(ui->checkAccounteButton, &QPushButton::clicked, this, &SettingsPage::onCheckAccountClicked);
     connect(ui->checkDockerInstallButton, &QPushButton::clicked, this, &SettingsPage::onCheckDockerInstallClicked);
 }
 
@@ -48,7 +48,7 @@ void SettingsPage::onCheckWeb3Clicked()
     process->start(pythonPath, QStringList() << QCoreApplication::applicationDirPath() + "/check_web3py.py");
 }
 
-void SettingsPage::onCheckBalanceClicked()
+void SettingsPage::onCheckAccountClicked()
 {
     QString address = "0xDf6e59c6DF1E9500fd35A76FF4C62F9901E90019";
     addressLabel->setText("Ethereum Address: " + address);
@@ -58,9 +58,9 @@ void SettingsPage::onCheckBalanceClicked()
         QByteArray output = process->readAllStandardOutput();
         QString balance = QString(output).trimmed();
         if (balance.isEmpty()) {
-            balanceLabel->setText("Balance: Failed to retrieve balance");
+            balanceLabel->setText("Failed to retrieve balance");
         } else {
-            balanceLabel->setText("Balance: " + balance + " ETH");
+            balanceLabel->setText(balance);
         }
     });
     connect(process, &QProcess::readyReadStandardError, this, [process, this]() {
@@ -71,7 +71,7 @@ void SettingsPage::onCheckBalanceClicked()
     });
 
     QString pythonPath = QCoreApplication::applicationDirPath() + "/bundled_python/bin/python3.11";
-    process->start(pythonPath, QStringList() << QCoreApplication::applicationDirPath() + "/check_balance.py" << address);
+    process->start(pythonPath, QStringList() << QCoreApplication::applicationDirPath() + "/check_account.py" << address);
 }
 
 void SettingsPage::onCheckDockerInstallClicked()
