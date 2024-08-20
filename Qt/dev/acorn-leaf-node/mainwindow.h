@@ -8,6 +8,7 @@
 #include "terminal.h"
 #include "settingspage.h"
 #include "hubpage.h"
+#include "accountpage.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -40,6 +41,9 @@ private:
     SettingsPage *settingsPage;
     QTimer *balanceUpdateTimer; // Timer for updating the balance automatically
     HubPage *hubPage;
+    AccountPage *accountPage;
+    void toggleTerminalExpansion();        // Method to handle terminal expansion on dashboard
+    void toggleTerminalExpansionHub();
 
     void setupUI();
     void setupConnections();

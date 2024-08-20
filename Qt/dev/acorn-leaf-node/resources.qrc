@@ -1,13 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>images/play.png</file>
-        <file>images/stop.png</file>
-        <file>images/pause.png</file>
-        <file>images/install.png</file>
-        <file>images/install_inactive.png</file>
-        <file>images/pause_inactive.png</file>
-        <file>images/play_inactive.png</file>
-        <file>images/stop_inactive.png</file>
         <file>images/icons/check.svg</file>
         <file>images/icons/chevron-down.svg</file>
         <file>images/icons/chevron-left.svg</file>
@@ -31,22 +23,33 @@
         <file>images/icons/menu.svg</file>
         <file>images/icons/moon.svg</file>
         <file>images/icons/navigation.svg</file>
+        <file>images/icons/pause.svg</file>
         <file>images/icons/play.svg</file>
         <file>images/icons/power.svg</file>
         <file>images/icons/search.svg</file>
         <file>images/icons/server.svg</file>
         <file>images/icons/settings.svg</file>
         <file>images/icons/share.svg</file>
+        <file>images/icons/stop.svg</file>
         <file>images/icons/sun.svg</file>
+        <file>images/icons/restart.svg</file>
         <file>images/icons/twitter.svg</file>
         <file>images/icons/user.svg</file>
         <file>images/icons/x.svg</file>
         <file>images/icons/youtube.svg</file>
+        <file>images/feature1.png</file>
+        <file>images/feature2.png</file>
+        <file>images/feature3.png</file>
         <file>check_balance.py</file>
         <file>check_web3py.py</file>
         <file>check_python.py</file>
         <file>check_docker.py</file>
         <file>check_account.py</file>
         <file>fetch_acornsh_docker_hub.py</file>
+        <file>generate_work_address.py</file>
+        <file>pull_docker_image.py</file>
+        <file>start_docker_image.py</file>
+        <file>list_docker_image.py</file>
+        <file>eth_account.json</file>
     </qresource>
 </RCC>

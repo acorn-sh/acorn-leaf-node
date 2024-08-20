@@ -1,9 +1,10 @@
 #include "helppage.h"
 #include <QVBoxLayout>
 #include <QLabel>
-#include <QTableWidget>
-#include <QHeaderView>
+#include <QFrame>
 #include <QPushButton>
+#include <QCheckBox>
+#include <QHBoxLayout>
 
 HelpPage::HelpPage(QWidget *parent)
     : QDialog(parent, Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowSystemMenuHint)
@@ -23,66 +24,78 @@ void HelpPage::setupUI()
 
     QVBoxLayout *layout = new QVBoxLayout(this);
 
-    // Create a table widget with three columns
-    QTableWidget *helpTable = new QTableWidget(this);
-    helpTable->setColumnCount(3);
+    // Calculate the fixed height for the frames
+    int helpPageHeight = this->height();
+    int bottomLayoutHeight = 50; // Approximate height for the checkbox and close button layout
+    int availableHeightForFrames = helpPageHeight - bottomLayoutHeight - 20; // 20px for padding
+    int frameHeight = availableHeightForFrames;
 
-    // Set the header labels for the columns
-    QStringList headers = {"Feature 1", "Feature 2", "Feature 3"};
-    helpTable->setHorizontalHeaderLabels(headers);
-    helpTable->horizontalHeader()->setStretchLastSection(true); // Stretch the last section to fit
+    // Create three frames equally spaced horizontally
+    QHBoxLayout *hLayout = new QHBoxLayout();
 
-    // Customize the appearance
-    helpTable->setStyleSheet("background-color: #ffffff; color: black; font-size: 14px;");
-    helpTable->setEditTriggers(QAbstractItemView::NoEditTriggers);  // Make table non-editable
-    helpTable->setSelectionMode(QAbstractItemView::NoSelection);    // Disable selection
-    helpTable->setShowGrid(false);                                  // Hide grid lines
+    // Define content variables
+    QStringList images = {":/images/feature1.png", ":/images/feature2.png", ":/images/feature3.png"};
+    QStringList descriptions = {
+        "Install dependencies.",
+        "Download docker containers.",
+        "Run containers and earn Acorn tokens."
+    };
 
-    layout->addWidget(helpTable);
+    int frameWidth = (this->width() - 40) / 3; // Calculate the width for each frame
 
-    // Add the "Do not show again" checkbox and Close button
+    for (int i = 0; i < 3; ++i) {
+        QFrame *frame = new QFrame(this);
+        frame->setFixedSize(frameWidth, frameHeight); // Set fixed size for each frame
+        frame->setStyleSheet("background-color: #ffffff; border: 1px solid #ccc;"); // Border only for the frame
+        QVBoxLayout *frameLayout = new QVBoxLayout(frame);
+
+        QLabel *imageLabel = new QLabel(frame);
+        imageLabel->setPixmap(QPixmap(images[i]).scaled(frameWidth - 20, frameHeight - 50, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+        imageLabel->setStyleSheet("border: none;");  // Remove border from the image
+        frameLayout->addWidget(imageLabel, 0, Qt::AlignCenter);
+
+        QLabel *textLabel = new QLabel(descriptions[i], frame);
+        textLabel->setWordWrap(true);
+        textLabel->setAlignment(Qt::AlignCenter); // Center the text
+        textLabel->setStyleSheet("border: none;");  // Remove border from the text
+        frameLayout->addWidget(textLabel, 0, Qt::AlignCenter);
+
+        hLayout->addWidget(frame);
+        hLayout->setStretch(i, 1);  // Make frames expandable
+    }
+
+    layout->addLayout(hLayout);
+    layout->addStretch();  // Add stretch to push the bottom layout down
+
+    // Create a horizontal layout for the checkbox and close button
+    QHBoxLayout *bottomLayout = new QHBoxLayout();
+
     doNotShowAgainCheckbox = new QCheckBox("Do not show again", this);
     QPushButton *closeButton = new QPushButton("Close", this);
 
-    QHBoxLayout *bottomLayout = new QHBoxLayout();
-    bottomLayout->addWidget(doNotShowAgainCheckbox, 0, Qt::AlignLeft);
-    bottomLayout->addWidget(closeButton, 0, Qt::AlignRight);
-
-    connect(closeButton, &QPushButton::clicked, this, &QDialog::accept);
-    connect(doNotShowAgainCheckbox, &QCheckBox::stateChanged, this, &HelpPage::onCheckboxChanged);
+    // Center the checkbox and close button in the layout
+    bottomLayout->addStretch(); // Add stretch before the items
+    bottomLayout->addWidget(doNotShowAgainCheckbox, 0, Qt::AlignCenter);
+    bottomLayout->addWidget(closeButton, 0, Qt::AlignCenter);
+    bottomLayout->addStretch(); // Add stretch after the items
 
     layout->addLayout(bottomLayout);
 
-    this->setLayout(layout);
-
     // Set the background of the popup
     this->setStyleSheet("background-color: rgba(255, 255, 255, 240);");
+
+    this->setLayout(layout);
+
+    // Connect the close button to close the dialog
+    connect(closeButton, &QPushButton::clicked, this, &QDialog::accept);
+
+    // Connect the checkbox state change to the slot
+    connect(doNotShowAgainCheckbox, &QCheckBox::stateChanged, this, &HelpPage::onCheckboxChanged);
 }
-
-
 
 void HelpPage::populateHelpContent()
 {
-    // Example of adding content to the help table
-    QTableWidget *helpTable = this->findChild<QTableWidget *>();
-
-    if (!helpTable) return;
-
-    helpTable->setRowCount(3);  // Example: 3 rows for 3 features
-
-    // Example content for each feature
-    for (int i = 0; i < 3; ++i) {
-        QLabel *imageLabel = new QLabel();
-        imageLabel->setPixmap(QPixmap(":/images/feature" + QString::number(i + 1) + ".png").scaled(100, 100, Qt::KeepAspectRatio));
-        helpTable->setCellWidget(i, 0, imageLabel);
-
-        QLabel *textLabel = new QLabel("Description of Feature " + QString::number(i + 1));
-        textLabel->setWordWrap(true);
-        helpTable->setCellWidget(i, 1, textLabel);
-    }
-
-    helpTable->resizeColumnsToContents();  // Adjust the column width based on content
-    helpTable->resizeRowsToContents();     // Adjust the row height based on content
+    // Content population logic is already handled in setupUI
 }
 
 void HelpPage::onCheckboxChanged(int state)

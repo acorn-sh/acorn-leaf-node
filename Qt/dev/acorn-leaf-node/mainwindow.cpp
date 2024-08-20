@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "helppage.h"
+#include "accountpage.h"
+
 #include <QTimer>
 #include <QTime>
 #include <QProcessEnvironment>
@@ -19,28 +21,26 @@ MainWindow::MainWindow(QWidget *parent)
     terminal = new Terminal(ui);
     settingsPage = new SettingsPage(ui);
     hubPage = new HubPage(ui);
+    accountPage = new AccountPage(ui, this);
 
     setupUI();
     setupConnections();
 
     ui->stackedWidget->setCurrentWidget(ui->dashboardPage);
 
-    // Show the HelpPage as a modal popup if it's the first time or if "Do not show again" is not checked
+    this->show();
+
     if (HelpPage::shouldShowHelp()) {
-        showHelpPage();  // Reuse the showHelpPage method
+        QTimer::singleShot(100, this, &MainWindow::showHelpPage);
     }
 
-    // Timer to update runtime every second
     QTimer *runtimeTimer = new QTimer(this);
     connect(runtimeTimer, &QTimer::timeout, this, &MainWindow::updateRuntime);
     runtimeTimer->start(1000);
 
-    // Timer to update account balance every minute
     balanceUpdateTimer = new QTimer(this);
     connect(balanceUpdateTimer, &QTimer::timeout, this, &MainWindow::updateAccountBalance);
-    balanceUpdateTimer->start(60000); // 60,000 milliseconds = 1 minute
-
-    // Initial call to update the account balance when the application starts
+    balanceUpdateTimer->start(60000);
     updateAccountBalance();
 }
 
@@ -48,10 +48,8 @@ void MainWindow::showHelpPage() {
     HelpPage helpPage(this);
     helpPage.setModal(true);
 
-    // Center the HelpPage over the MainWindow
-    int x = this->geometry().center().x() - helpPage.width() / 2;
-    int y = this->geometry().center().y() - helpPage.height() / 2;
-    helpPage.move(x, y);
+    helpPage.resize(this->width() * 0.8, this->height() * 0.8);
+    helpPage.move(this->geometry().center() - helpPage.rect().center());
 
     helpPage.exec();
 }
@@ -64,20 +62,23 @@ MainWindow::~MainWindow()
     delete terminal;
     delete settingsPage;
     delete hubPage;
-
+    delete accountPage;
 }
 
 void MainWindow::setupUI()
 {
     terminal->setupTerminal();
+    ui->terminal->setMaximumHeight(38);
 }
 
 void MainWindow::setupConnections()
 {
     mainButtons->setupConnections(this);
     settingsPage->setupConnections(this);
-    hubPage->setupConnections(this);  // Setup connections for HubPage
+    hubPage->setupConnections(this);
+    accountPage->setupConnections();
 
+    connect(ui->expandButton, &QPushButton::clicked, this, &MainWindow::toggleTerminalExpansion);
 }
 
 void MainWindow::showDashboard()
@@ -88,8 +89,7 @@ void MainWindow::showDashboard()
 void MainWindow::showHub()
 {
     ui->stackedWidget->setCurrentWidget(ui->hubPage);
-    hubPage->populateHubTable();  // Populate the table when HubPage is shown
-
+    hubPage->populateHubTable();
 }
 
 void MainWindow::showSettings()
@@ -97,11 +97,10 @@ void MainWindow::showSettings()
     ui->stackedWidget->setCurrentWidget(ui->settingsPage);
 }
 
-
-
 void MainWindow::showAccount()
 {
     ui->stackedWidget->setCurrentWidget(ui->accountPage);
+    accountPage->refreshEthereumAddress();
 }
 
 void MainWindow::updateRuntime()
@@ -132,5 +131,16 @@ void MainWindow::updateAccountBalance()
 
     QString pythonPath = QCoreApplication::applicationDirPath() + "/bundled_python/bin/python3.11";
     process->start(pythonPath, QStringList() << QCoreApplication::applicationDirPath() + "/check_balance.py" << address);
+}
+
+void MainWindow::toggleTerminalExpansion()
+{
+    if (ui->terminal->maximumHeight() == 38) {
+        ui->terminal->setMaximumHeight(400);
+        ui->expandButton->setIcon(QIcon(":/images/icons/chevron-down.svg"));
+    } else {
+        ui->terminal->setMaximumHeight(38);
+        ui->expandButton->setIcon(QIcon("://images/icons/chevron-up.svg"));
+    }
 }
 

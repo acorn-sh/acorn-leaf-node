@@ -16,14 +16,14 @@ public:
 private slots:
     void onCheckPythonVersionClicked();
     void onCheckWeb3Clicked();
-    void onCheckAccountClicked();
+    void onCheckContractClicked();
     void onCheckDockerInstallClicked();
 
 private:
     Ui::MainWindow *ui;
     QLabel *pythonLabel;
-    QLabel *addressLabel;
-    QLabel *balanceLabel;
+    QLabel *contractAddressLabel;
+    QLabel *contractBalanceLabel;
     QLabel *web3StatusLabel;
     QLabel *dockerInstallLabel;
 };

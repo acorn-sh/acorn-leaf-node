@@ -19,34 +19,46 @@
     border: none;
     background-color: transparent;
     color: fff;
-}
+    }
 
-#centralwidget {
-    background-color: #ada9bb;
-}
+    #centralwidget {
+        background-color: #ada9bb;
+    }
 
-QPushButton {
-    padding: 10px;
-    background-color: #938ea4;
-    color: fff;
-}
+    QPushButton {
+        padding: 10px;
+        background-color: #938ea4;
+        color: fff;
+    }
 
-QPushButton:pressed {
-    background-color: #6d6781;
-}
+    QPushButton:pressed {
+        background-color: #6d6781;
+    }
 
-QPushButton:checked {
-    background-color: #938ea4;
-}
+    QPushButton:checked {
+        background-color: #938ea4;
+    }
 
-QPushButton[flat=&quot;false&quot;] {
-    border: 1px solid #0b2833;
-}
+    QPushButton:hover {
+        background-color: #fbdea3;
+    }
 
-#main_body {
-    background-color: #ada9bb;
-    border-radius: 10px;
-}
+    QPushButton[flat=&quot;false&quot;] {
+        border: 1px solid #0b2833;
+    }
+
+    #main_body {
+        background-color: #ada9bb;
+        border-radius: 10px;
+    }
+
+    QLineEdit {
+        border: 2px solid #0b2833;
+        background-color: #ada9bb;
+        color: #000000;
+        padding: 5px;
+        border-radius: 0px;
+    }
 </string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -81,7 +93,7 @@ QPushButton[flat=&quot;false&quot;] {
         <number>0</number>
        </property>
        <item alignment="Qt::AlignmentFlag::AlignTop">
-        <widget class="QFrame" name="Header">
+        <widget class="QFrame" name="MainNavigation">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -123,7 +135,7 @@ QPushButton[flat=&quot;false&quot;] {
            <number>0</number>
           </property>
           <item>
-           <layout class="QHBoxLayout" name="topBarLayout">
+           <layout class="QHBoxLayout" name="TopBar">
             <property name="spacing">
              <number>1</number>
             </property>
@@ -278,7 +290,7 @@ QPushButton[flat=&quot;false&quot;] {
           <property name="bottomMargin">
            <number>0</number>
           </property>
-          <item>
+          <item alignment="Qt::AlignmentFlag::AlignTop">
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
@@ -304,7 +316,7 @@ QPushButton[flat=&quot;false&quot;] {
                <number>0</number>
               </property>
               <item alignment="Qt::AlignmentFlag::AlignTop">
-               <widget class="QFrame" name="frame_4">
+               <widget class="QFrame" name="DashboardFrame">
                 <property name="autoFillBackground">
                  <bool>false</bool>
                 </property>
@@ -405,113 +417,6 @@ QPushButton[flat=&quot;false&quot;] {
                      <string>Income</string>
                     </property>
                    </column>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item>
-               <widget class="QFrame" name="frame_3">
-                <property name="frameShape">
-                 <enum>QFrame::Shape::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Shadow::Raised</enum>
-                </property>
-                <layout class="QHBoxLayout" name="horizontalLayout">
-                 <property name="spacing">
-                  <number>1</number>
-                 </property>
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>5</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <item alignment="Qt::AlignmentFlag::AlignTop">
-                  <widget class="QFrame" name="frame_5">
-                   <property name="frameShape">
-                    <enum>QFrame::Shape::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
-                   </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_2">
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>0</number>
-                    </property>
-                    <item>
-                     <widget class="QPushButton" name="pushButton">
-                      <property name="text">
-                       <string>Expand</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item alignment="Qt::AlignmentFlag::AlignTop">
-                  <widget class="QFrame" name="frame_6">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::Shape::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
-                   </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_3">
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>0</number>
-                    </property>
-                    <item>
-                     <widget class="QPlainTextEdit" name="terminal">
-                      <property name="styleSheet">
-                       <string notr="true"/>
-                      </property>
-                      <property name="readOnly">
-                       <bool>true</bool>
-                      </property>
-                      <property name="plainText">
-                       <string>terminal %</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
                   </widget>
                  </item>
                 </layout>
@@ -725,7 +630,7 @@ QPushButton[flat=&quot;false&quot;] {
                        </size>
                       </property>
                       <property name="text">
-                       <string/>
+                       <string>Python</string>
                       </property>
                      </widget>
                     </item>
@@ -817,7 +722,7 @@ QPushButton[flat=&quot;false&quot;] {
                        </size>
                       </property>
                       <property name="text">
-                       <string/>
+                       <string>Docker</string>
                       </property>
                      </widget>
                     </item>
@@ -909,7 +814,7 @@ QPushButton[flat=&quot;false&quot;] {
                        </size>
                       </property>
                       <property name="text">
-                       <string/>
+                       <string>Status</string>
                       </property>
                      </widget>
                     </item>
@@ -977,7 +882,7 @@ QPushButton[flat=&quot;false&quot;] {
                         <number>0</number>
                        </property>
                        <item alignment="Qt::AlignmentFlag::AlignTop">
-                        <widget class="QPushButton" name="checkAccounteButton">
+                        <widget class="QPushButton" name="checkContractButton">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
                            <horstretch>0</horstretch>
@@ -985,7 +890,7 @@ QPushButton[flat=&quot;false&quot;] {
                           </sizepolicy>
                          </property>
                          <property name="text">
-                          <string>Account</string>
+                          <string>Contract Address</string>
                          </property>
                         </widget>
                        </item>
@@ -1017,7 +922,7 @@ QPushButton[flat=&quot;false&quot;] {
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLabel" name="addressLabel">
+                        <widget class="QLabel" name="contractAddressLabel">
                          <property name="minimumSize">
                           <size>
                            <width>100</width>
@@ -1025,12 +930,12 @@ QPushButton[flat=&quot;false&quot;] {
                           </size>
                          </property>
                          <property name="text">
-                          <string/>
+                          <string>Address</string>
                          </property>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="balanceLabel">
+                        <widget class="QLabel" name="contractBalanceLabel">
                          <property name="minimumSize">
                           <size>
                            <width>100</width>
@@ -1038,7 +943,7 @@ QPushButton[flat=&quot;false&quot;] {
                           </size>
                          </property>
                          <property name="text">
-                          <string/>
+                          <string>Balance</string>
                          </property>
                         </widget>
                        </item>
@@ -1083,7 +988,7 @@ QPushButton[flat=&quot;false&quot;] {
               <property name="bottomMargin">
                <number>0</number>
               </property>
-              <item alignment="Qt::AlignmentFlag::AlignTop">
+              <item alignment="Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop">
                <widget class="QFrame" name="frame">
                 <property name="frameShape">
                  <enum>QFrame::Shape::StyledPanel</enum>
@@ -1091,9 +996,9 @@ QPushButton[flat=&quot;false&quot;] {
                 <property name="frameShadow">
                  <enum>QFrame::Shadow::Raised</enum>
                 </property>
-                <layout class="QHBoxLayout" name="horizontalLayout_7">
+                <layout class="QVBoxLayout" name="verticalLayout_5">
                  <property name="spacing">
-                  <number>0</number>
+                  <number>1</number>
                  </property>
                  <property name="leftMargin">
                   <number>0</number>
@@ -1107,11 +1012,234 @@ QPushButton[flat=&quot;false&quot;] {
                  <property name="bottomMargin">
                   <number>0</number>
                  </property>
-                 <item>
-                  <widget class="QLabel" name="accountLabel">
-                   <property name="text">
-                    <string>Account page</string>
+                 <item alignment="Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop">
+                  <widget class="QFrame" name="frame_17">
+                   <property name="frameShape">
+                    <enum>QFrame::Shape::StyledPanel</enum>
                    </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Shadow::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_18">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item alignment="Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop">
+                     <widget class="QFrame" name="frame_18">
+                      <property name="minimumSize">
+                       <size>
+                        <width>200</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>200</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Raised</enum>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_17">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>10</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QPushButton" name="generateAddressButton">
+                         <property name="text">
+                          <string>Generate Work Adress</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item alignment="Qt::AlignmentFlag::AlignLeft">
+                     <widget class="QFrame" name="frame_20">
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Raised</enum>
+                      </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_6">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="accountLabel">
+                         <property name="text">
+                          <string>No Ethereum Adress</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="privateKeyLabel">
+                         <property name="text">
+                          <string>No Private Key</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item alignment="Qt::AlignmentFlag::AlignLeft">
+                  <widget class="QFrame" name="frame_19">
+                   <property name="frameShape">
+                    <enum>QFrame::Shape::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Shadow::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_20">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QFrame" name="frame_22">
+                      <property name="minimumSize">
+                       <size>
+                        <width>200</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>200</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Raised</enum>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_19">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>10</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QPushButton" name="saveButton">
+                         <property name="text">
+                          <string>Save</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item alignment="Qt::AlignmentFlag::AlignLeft">
+                     <widget class="QFrame" name="frame_21">
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Raised</enum>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_7">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLineEdit" name="lineEdit">
+                         <property name="minimumSize">
+                          <size>
+                           <width>200</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="autoFillBackground">
+                          <bool>false</bool>
+                         </property>
+                         <property name="text">
+                          <string>Enter withdrawal address</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                 </layout>
@@ -1119,6 +1247,130 @@ QPushButton[flat=&quot;false&quot;] {
               </item>
              </layout>
             </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QFrame" name="TerminalFrame">
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>1</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>5</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item alignment="Qt::AlignmentFlag::AlignTop">
+        <widget class="QFrame" name="frame_5">
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="expandButton">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/images/icons/chevron-up.svg</normaloff>:/images/icons/chevron-up.svg</iconset>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignmentFlag::AlignTop">
+        <widget class="QFrame" name="frame_6">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item alignment="Qt::AlignmentFlag::AlignBottom">
+           <widget class="QPlainTextEdit" name="terminal">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+            <property name="plainText">
+             <string/>
+            </property>
            </widget>
           </item>
          </layout>

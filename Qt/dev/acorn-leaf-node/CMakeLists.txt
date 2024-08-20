@@ -30,6 +30,14 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         hubpage.h hubpage.cpp
         helppage.h helppage.cpp
+        accountpage.h accountpage.cpp
+
+
+
+
+
+
+
     )
 else()
     if(ANDROID)
@@ -70,6 +78,11 @@ add_custom_command(TARGET acorn-leaf-node POST_BUILD
         ${CMAKE_SOURCE_DIR}/check_docker.py
         ${CMAKE_SOURCE_DIR}/check_account.py
         ${CMAKE_SOURCE_DIR}/fetch_acornsh_docker_hub.py
+        ${CMAKE_SOURCE_DIR}/generate_work_address.py
+        ${CMAKE_SOURCE_DIR}/pull_docker_image.py
+        ${CMAKE_SOURCE_DIR}/start_docker_image.py
+        ${CMAKE_SOURCE_DIR}/list_docker_image.py
+        ${CMAKE_SOURCE_DIR}/eth_account.json
         $<TARGET_FILE_DIR:acorn-leaf-node>
 )
 

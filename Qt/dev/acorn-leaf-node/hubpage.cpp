@@ -1,9 +1,13 @@
 #include "hubpage.h"
-#include <QProcess>
 #include <QDebug>
 #include <QPushButton>
 #include <QHBoxLayout>
 #include <QWidget>
+#include <QProgressBar>
+#include <QMessageBox>
+#include <QFile>
+#include <QProcess>
+#include <QScrollBar>
 
 HubPage::HubPage(Ui::MainWindow *ui, QObject *parent)
     : QObject(parent), ui(ui)
@@ -24,41 +28,32 @@ void HubPage::setupTable()
     ui->hubTableWidget->setHorizontalHeaderLabels(headers);
     ui->hubTableWidget->setStyleSheet("background-color: #d5d3e0; color: black;");
 
-    // Ensure the table is read-only but selectable
     ui->hubTableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->hubTableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->hubTableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);
 
-    // Allow horizontal scroll bar when necessary
     ui->hubTableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 
-    // Set initial widths to fit content for specific columns using ResizeToContents
-    ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents); // Repository Name
-    ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents); // Description
-    ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(2, QHeaderView::ResizeToContents); // Stars
-    ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(3, QHeaderView::ResizeToContents); // Link
+    ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
+    ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
+    ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
+    ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
 
-    // Enable resizing by dragging for the Install and Status columns
-    ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(4, QHeaderView::Interactive); // Install
-    ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(5, QHeaderView::Interactive); // Status
+    ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(4, QHeaderView::Interactive);
+    ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(5, QHeaderView::Interactive);
 
-    // Set minimum width for columns
     ui->hubTableWidget->horizontalHeader()->setMinimumSectionSize(70);
 
-    // Adjust column widths to fit table width
     adjustColumnWidths();
 }
 
-
 void HubPage::adjustColumnWidths()
 {
-    // Resize specific columns to fit their contents
-    ui->hubTableWidget->resizeColumnToContents(0); // Repository Name
-    ui->hubTableWidget->resizeColumnToContents(1); // Description
-    ui->hubTableWidget->resizeColumnToContents(2); // Stars
-    ui->hubTableWidget->resizeColumnToContents(3); // Link
+    ui->hubTableWidget->resizeColumnToContents(0);
+    ui->hubTableWidget->resizeColumnToContents(1);
+    ui->hubTableWidget->resizeColumnToContents(2);
+    ui->hubTableWidget->resizeColumnToContents(3);
 
-    // Adjust remaining columns to fit within the table width
     int totalWidth = ui->hubTableWidget->viewport()->width();
     int fixedColumnsWidth = ui->hubTableWidget->columnWidth(0) + ui->hubTableWidget->columnWidth(1) + ui->hubTableWidget->columnWidth(2) + ui->hubTableWidget->columnWidth(3);
     int remainingWidth = totalWidth - fixedColumnsWidth;
@@ -73,7 +68,7 @@ void HubPage::adjustColumnWidths()
 
 void HubPage::populateHubTable()
 {
-    fetchDockerHubRepos();  // Fetch and populate the table with Docker Hub repositories
+    fetchDockerHubRepos();
 }
 
 void HubPage::fetchDockerHubRepos()
@@ -98,41 +93,129 @@ void HubPage::fetchDockerHubRepos()
             ui->hubTableWidget->setItem(i, 2, new QTableWidgetItem(repoDetails[3].split(": ")[1]));
             ui->hubTableWidget->setItem(i, 3, new QTableWidgetItem(repoDetails[1].split(": ")[1]));
 
-            addControlButtons(i); // Add control buttons to the table
+            addControlButtons(i);
         }
     }
 
-    adjustColumnWidths();  // Adjust the column widths after populating the table
+    adjustColumnWidths();
 }
 
 void HubPage::addControlButtons(int row)
 {
-    // Install button
+    // Create the install button with the appropriate icon and styles
+    QWidget* installWidget = new QWidget();
+    QHBoxLayout* installLayout = new QHBoxLayout(installWidget);
+    installLayout->setContentsMargins(0, 0, 0, 0);
+    installLayout->setAlignment(Qt::AlignCenter);
+
     QPushButton* btnInstall = new QPushButton();
-    btnInstall->setIcon(QIcon(":/images/install.png"));
+    btnInstall->setIcon(QIcon(":/images/icons/download.svg"));
     btnInstall->setFixedSize(24, 24);
+
+    // Apply the stylesheet to btnInstall to include the hover effect
+    QString buttonStyle = "QPushButton { background-color: #938ea4; }"
+                          "QPushButton:hover { background-color: #fbdea3; }"
+                          "QPushButton:pressed { background-color: #6d6781; }";
+    btnInstall->setStyleSheet(buttonStyle);
+
+    installLayout->addWidget(btnInstall);
+
+    // Connect the install button to its corresponding slot
     connect(btnInstall, &QPushButton::clicked, this, [this, row](){ handleInstall(row); });
 
-    // Status button
-    QPushButton* btnStatus = new QPushButton();
-    btnStatus->setIcon(QIcon(":/images/status.png"));
-    btnStatus->setFixedSize(24, 24);
-    connect(btnStatus, &QPushButton::clicked, this, [this, row](){ handleStatus(row); });
+    ui->hubTableWidget->setCellWidget(row, 4, installWidget);
 
-    // Add the Install button to the Install column
-    ui->hubTableWidget->setCellWidget(row, 4, btnInstall);
+    // Create the status widget for the status column (initially empty)
+    QWidget* statusWidget = new QWidget();
+    QHBoxLayout* statusLayout = new QHBoxLayout(statusWidget);
+    statusLayout->setContentsMargins(0, 0, 0, 0);
+    statusLayout->setAlignment(Qt::AlignCenter);
 
-    // Add the Status button to the Status column
-    ui->hubTableWidget->setCellWidget(row, 5, btnStatus);
+    ui->hubTableWidget->setCellWidget(row, 5, statusWidget);
 }
-
 
 void HubPage::handleInstall(int row) {
-    // Implement what should happen when the install button is clicked
-    qDebug() << "Install button clicked for row:" << row;
+    // Get the Docker Hub URL from the table
+    QString url = ui->hubTableWidget->item(row, 3)->text(); // Assuming the URL is in the 4th column
+
+    // Setup environment variables to ensure docker is found
+    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+    QString path = env.value("PATH");
+    if (!path.contains("/usr/local/bin")) {  // Modify this path based on your system
+        path = "/usr/local/bin:" + path;
+        env.insert("PATH", path);
+    }
+
+    // Prepare the QProcess to execute the Python script
+    QProcess *process = new QProcess(this);
+    process->setProcessEnvironment(env);
+
+    // Define the path to Python and the script
+    QString pythonPath = QCoreApplication::applicationDirPath() + "/bundled_python/bin/python3.11";
+    QString scriptPath = QCoreApplication::applicationDirPath() + "/pull_docker_image.py";
+
+    // Update status column to show progress bar
+    QWidget* statusWidget = new QWidget();
+    QHBoxLayout* statusLayout = new QHBoxLayout(statusWidget);
+    statusLayout->setContentsMargins(0, 0, 0, 0);
+    statusLayout->setAlignment(Qt::AlignCenter);
+
+    QProgressBar* progressBar = new QProgressBar();
+    progressBar->setRange(0, 0);  // Indeterminate progress
+    progressBar->setFixedHeight(20);
+    progressBar->setTextVisible(false);
+
+    statusLayout->addWidget(progressBar);
+    ui->hubTableWidget->setCellWidget(row, 5, statusWidget);
+
+    activeProcesses[row] = process;
+
+    connect(process, &QProcess::readyReadStandardOutput, this, [this, process]() {
+        QString output = process->readAllStandardOutput().trimmed();
+        displayLogInTerminal(output);
+    });
+
+    connect(process, &QProcess::readyReadStandardError, this, [this, process]() {
+        QString error = process->readAllStandardError().trimmed();
+        displayLogInTerminal(error);
+    });
+
+    connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [this, row, process, progressBar](int exitCode, QProcess::ExitStatus exitStatus) {
+        progressBar->setRange(0, 100);
+        progressBar->setValue(100);
+
+        if (exitCode == 0 && exitStatus == QProcess::NormalExit) {
+            updateInstallButton(row);
+        } else {
+            QMessageBox::critical(nullptr, "Installation Error", "Failed to pull the Docker container.");
+        }
+
+        activeProcesses.remove(row);
+    });
+
+    process->start(pythonPath, QStringList() << scriptPath << url);
 }
 
-void HubPage::handleStatus(int row) {
-    // Implement what should happen when the status button is clicked
-    qDebug() << "Status button clicked for row:" << row;
+void HubPage::updateInstallButton(int row)
+{
+    QWidget* installWidget = new QWidget();
+    QHBoxLayout* installLayout = new QHBoxLayout(installWidget);
+    installLayout->setContentsMargins(0, 0, 0, 0);
+    installLayout->setAlignment(Qt::AlignCenter);
+
+    QPushButton* btnInstalled = new QPushButton();
+    btnInstalled->setIcon(QIcon(":/images/icons/check.svg"));
+    btnInstalled->setFixedSize(24, 24);
+    installLayout->addWidget(btnInstalled);
+
+    ui->hubTableWidget->setCellWidget(row, 4, installWidget);
 }
+
+void HubPage::displayLogInTerminal(const QString &log)
+{
+    ui->terminal->appendPlainText(log);
+    QScrollBar *scrollBar = ui->terminal->verticalScrollBar();
+    scrollBar->setValue(scrollBar->maximum());
+}
+
+
