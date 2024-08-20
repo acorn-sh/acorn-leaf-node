@@ -1,192 +1,229 @@
 #include "containertable.h"
 #include <QTime>
+#include <QProcess>
+#include <QDebug>
+#include <QMessageBox>
+#include <QHBoxLayout>
+#include <QPushButton>
+#include <QRegularExpression>
+#include <QScrollBar>
 
 ContainerTable::ContainerTable(Ui::MainWindow *ui) : ui(ui)
 {
     setupTable();
-    populateDummyData();
+    populateContainerData();
 }
 
 void ContainerTable::setupTable()
 {
-    QStringList headers = {"Container Name", "Description", "Status", "Time", "Timer", "CPU", "GPU", "HDD", "NET", "Rate", "Income"};
+    QStringList headers = {"Container Name", "Image ID", "Container ID", "Status", "Time", "CPU", "GPU", "MEM", "NET", "PORT"};
     ui->containerTable->setColumnCount(headers.size());
     ui->containerTable->setHorizontalHeaderLabels(headers);
+    ui->containerTable->setStyleSheet("background-color: #d5d3e0; color: black;");
 
-    // Ensure the table is read-only but selectable
     ui->containerTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->containerTable->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->containerTable->setSelectionBehavior(QAbstractItemView::SelectItems);
-
-    // Allow horizontal scroll bar when necessary
     ui->containerTable->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 
-    // Set initial widths to fit content for specific columns using ResizeToContents
-    ui->containerTable->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents); // Container Name
-    ui->containerTable->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents); // Description
-    ui->containerTable->horizontalHeader()->setSectionResizeMode(2, QHeaderView::ResizeToContents); // Status
-
-    // Enable resizing by dragging
-    for (int i = 3; i < headers.size(); ++i) {
-        ui->containerTable->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Interactive);
+    for (int i = 0; i < headers.size(); ++i) {
+        ui->containerTable->horizontalHeader()->setSectionResizeMode(i, QHeaderView::ResizeToContents);
     }
 
-    // Set minimum width for columns
-    ui->containerTable->horizontalHeader()->setMinimumSectionSize(50);
+    ui->containerTable->horizontalHeader()->setMinimumSectionSize(70);
 
-    // Adjust column widths to fit table width
     adjustColumnWidths();
 }
 
-void ContainerTable::adjustColumnWidths()
+void ContainerTable::populateContainerData()
 {
-    // Resize specific columns to fit their contents
-    ui->containerTable->resizeColumnToContents(0); // Container Name
-    ui->containerTable->resizeColumnToContents(1); // Description
-    ui->containerTable->resizeColumnToContents(2); // Status
+    QStringList sudoacornData;
 
-    // Adjust remaining columns to fit within the table width
-    int totalWidth = ui->containerTable->viewport()->width();
-    int fixedColumnsWidth = ui->containerTable->columnWidth(0) + ui->containerTable->columnWidth(1) + ui->containerTable->columnWidth(2);
-    int remainingWidth = totalWidth - fixedColumnsWidth;
-    int variableColumnsCount = ui->containerTable->columnCount() - 3;
-
-    int columnWidth = remainingWidth / variableColumnsCount;
-
-    for (int i = 3; i < ui->containerTable->columnCount(); ++i) {
-        ui->containerTable->setColumnWidth(i, std::max(columnWidth, 50));
+    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+    QString path = env.value("PATH");
+    if (!path.contains("/usr/local/bin")) {
+        path = "/usr/local/bin:" + path;
+        env.insert("PATH", path);
     }
-}
 
-void ContainerTable::populateDummyData()
-{
-    ui->containerTable->insertRow(ui->containerTable->rowCount());
-    int row = ui->containerTable->rowCount() - 1;
+    QProcess *process = new QProcess(this);
+    process->setProcessEnvironment(env);
+    process->setProcessChannelMode(QProcess::MergedChannels);
 
-    QTableWidgetItem* itemName = new QTableWidgetItem("Docker1 - ETH Mining");
-    itemName->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-    ui->containerTable->setItem(row, 0, itemName);
+    QString pythonPath = QCoreApplication::applicationDirPath() + "/bundled_python/bin/python3.11";
+    QString scriptPath = QCoreApplication::applicationDirPath() + "/list_docker_image.py";
 
-    QTableWidgetItem* itemDesc = new QTableWidgetItem("Ethereum POS mining");
-    itemDesc->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-    ui->containerTable->setItem(row, 1, itemDesc);
+    connect(process, &QProcess::readyRead, [process, &sudoacornData, this]() {
+        QString output = process->readAll();
+        displayLogInTerminal(output);
+        sudoacornData = output.split("\n", Qt::SkipEmptyParts);
+    });
 
-    addControlButtons(row, "Install"); // Change "Install" to the active status as needed
+    process->start(pythonPath, QStringList() << scriptPath);
+    process->waitForFinished();
 
-    QTableWidgetItem* itemTime = new QTableWidgetItem("01:45:10");
-    itemTime->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-    ui->containerTable->setItem(row, 3, itemTime);
+    ui->containerTable->setRowCount(sudoacornData.size());
 
-    QTableWidgetItem* itemTimer = new QTableWidgetItem("1h");
-    itemTimer->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-    ui->containerTable->setItem(row, 4, itemTimer);
+    for (int i = 0; i < sudoacornData.size(); ++i) {
+        QStringList details = sudoacornData[i].split("|", Qt::SkipEmptyParts);
 
-    QTableWidgetItem* itemCPU = new QTableWidgetItem("Medium");
-    itemCPU->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-    ui->containerTable->setItem(row, 5, itemCPU);
+        if (details.size() < 9) continue;
 
-    QTableWidgetItem* itemGPU = new QTableWidgetItem("Low");
-    itemGPU->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-    ui->containerTable->setItem(row, 6, itemGPU);
+        QString repository = details[0].trimmed();
+        QString imageId = details[1].trimmed();
+        QString containerId = details[2].trimmed();
+        QString status = details[3].trimmed();
+        QString time = details[4].trimmed();
 
-    QTableWidgetItem* itemHDD = new QTableWidgetItem("High");
-    itemHDD->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-    ui->containerTable->setItem(row, 7, itemHDD);
+        QString cpu = details[5].trimmed();
+        QString gpu = "";
+        QString mem_usage = details[6].trimmed();
+        QString net_io = details[7].trimmed();
+        QString port = details[8].trimmed();
 
-    QTableWidgetItem* itemNET = new QTableWidgetItem("Low");
-    itemNET->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-    ui->containerTable->setItem(row, 8, itemNET);
+        ui->containerTable->setItem(i, 0, new QTableWidgetItem(repository));
+        ui->containerTable->setItem(i, 1, new QTableWidgetItem(imageId));
+        ui->containerTable->setItem(i, 2, new QTableWidgetItem(containerId));
+        ui->containerTable->setItem(i, 3, new QTableWidgetItem(status));
+        ui->containerTable->setItem(i, 4, new QTableWidgetItem(time));
+        ui->containerTable->setItem(i, 5, new QTableWidgetItem(cpu));
+        ui->containerTable->setItem(i, 6, new QTableWidgetItem(gpu));
+        ui->containerTable->setItem(i, 7, new QTableWidgetItem(mem_usage));
+        ui->containerTable->setItem(i, 8, new QTableWidgetItem(net_io));
+        ui->containerTable->setItem(i, 9, new QTableWidgetItem(port));
 
-    QTableWidgetItem* itemProfit = new QTableWidgetItem("$5");
-    itemProfit->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-    ui->containerTable->setItem(row, 9, itemProfit);
+        addControlButtons(i, status);
+    }
 
-    QTableWidgetItem* itemIncome = new QTableWidgetItem("$50");
-    itemIncome->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-    ui->containerTable->setItem(row, 10, itemIncome);
-
-    // Adjust column widths to fit content
     adjustColumnWidths();
 }
 
 void ContainerTable::addControlButtons(int row, const QString &activeStatus)
 {
     QWidget* pWidget = new QWidget();
-    QHBoxLayout* pLayout = new QHBoxLayout(pWidget);
-    pLayout->setAlignment(Qt::AlignCenter);
-    pLayout->setContentsMargins(0, 0, 0, 0);
-    pLayout->setSpacing(1); // Set spacing between buttons
+    QHBoxLayout* pButtonLayout = new QHBoxLayout(pWidget);
+    pButtonLayout->setAlignment(Qt::AlignCenter);
+    pButtonLayout->setContentsMargins(0, 0, 0, 0);
+    pButtonLayout->setSpacing(5);
 
-    QPushButton* btnPlay = new QPushButton();
+    QPushButton* btnStart = new QPushButton();
     QPushButton* btnStop = new QPushButton();
     QPushButton* btnPause = new QPushButton();
-    QPushButton* btnInstall = new QPushButton();
+    QPushButton* btnRestart = new QPushButton();
 
-    // Set icons
-    btnPlay->setIcon(QIcon(":/images/play.png"));
-    btnStop->setIcon(QIcon(":/images/stop.png"));
-    btnPause->setIcon(QIcon(":/images/pause.png"));
-    btnInstall->setIcon(QIcon(":/images/install.png"));
+    btnStart->setIcon(QIcon(":/images/icons/play.svg"));
+    btnStop->setIcon(QIcon(":/images/icons/stop.svg"));
+    btnPause->setIcon(QIcon(":/images/icons/pause.svg"));
+    btnRestart->setIcon(QIcon(":/images/icons/restart.svg"));
 
-    // Set button sizes
-    btnPlay->setFixedSize(32, 32);
-    btnStop->setFixedSize(32, 32);
-    btnPause->setFixedSize(32, 32);
-    btnInstall->setFixedSize(32, 32);
+    btnStart->setFixedSize(24, 24);
+    btnStop->setFixedSize(24, 24);
+    btnPause->setFixedSize(24, 24);
+    btnRestart->setFixedSize(24, 24);
 
-    // Set styles for active and inactive buttons
-    QString activeStyle = "QPushButton { border-radius: 0px; }";
-    QString inactiveStyle = "QPushButton { border-radius: 0px; color: gray; }";
+    QString buttonStyle = "QPushButton { background-color: #938ea4; }"
+                          "QPushButton:hover { background-color: #fbdea3; }"
+                          "QPushButton:pressed { background-color: #6d6781; }";
 
-    btnPlay->setStyleSheet(activeStatus == "Play" ? activeStyle : inactiveStyle);
-    btnStop->setStyleSheet(activeStatus == "Stop" ? activeStyle : inactiveStyle);
-    btnPause->setStyleSheet(activeStatus == "Pause" ? activeStyle : inactiveStyle);
-    btnInstall->setStyleSheet(activeStatus == "Install" ? activeStyle : inactiveStyle);
+    btnStart->setStyleSheet(buttonStyle);
+    btnStop->setStyleSheet(buttonStyle);
+    btnPause->setStyleSheet(buttonStyle);
+    btnRestart->setStyleSheet(buttonStyle);
 
-    // Set grayscale icons for inactive buttons
-    if (activeStatus != "Play") btnPlay->setIcon(QIcon(":/images/play_inactive.png"));
-    if (activeStatus != "Stop") btnStop->setIcon(QIcon(":/images/stop_inactive.png"));
-    if (activeStatus != "Pause") btnPause->setIcon(QIcon(":/images/pause_inactive.png"));
-    if (activeStatus != "Install") btnInstall->setIcon(QIcon(":/images/install_inactive.png"));
+    connect(btnStart, &QPushButton::clicked, this, [this, row](){ handleDockerCommand(row, "start"); });
+    connect(btnStop, &QPushButton::clicked, this, [this, row](){ handleDockerCommand(row, "stop"); });
+    connect(btnPause, &QPushButton::clicked, this, [this, row](){ handleDockerCommand(row, "pause"); });
+    connect(btnRestart, &QPushButton::clicked, this, [this, row](){ handleDockerCommand(row, "restart"); });
 
-    // Connect button signals to slots
-    connect(btnPlay, &QPushButton::clicked, this, [this, row](){ handlePlay(row); });
-    connect(btnStop, &QPushButton::clicked, this, [this, row](){ handleStop(row); });
-    connect(btnPause, &QPushButton::clicked, this, [this, row](){ handlePause(row); });
-    connect(btnInstall, &QPushButton::clicked, this, [this, row](){ handleInstall(row); });
+    pButtonLayout->addWidget(btnStart);
+    pButtonLayout->addWidget(btnStop);
+    pButtonLayout->addWidget(btnPause);
+    pButtonLayout->addWidget(btnRestart);
 
-    // Add buttons to layout
-    pLayout->addWidget(btnPlay);
-    pLayout->addWidget(btnStop);
-    pLayout->addWidget(btnPause);
-    pLayout->addWidget(btnInstall);
-    pWidget->setLayout(pLayout);
-
-    ui->containerTable->setCellWidget(row, 2, pWidget);
+    pWidget->setLayout(pButtonLayout);
+    ui->containerTable->setCellWidget(row, 3, pWidget);
 }
 
 void ContainerTable::updateRuntime()
 {
-    QTableWidgetItem *item = ui->containerTable->item(0, 3); // Assuming you want to update the 'Time' of the first row
-    if (item) {
-        QTime time = QTime::fromString(item->text(), "hh:mm:ss");
-        time = time.addSecs(1);
-        item->setText(time.toString("hh:mm:ss"));
+    for (int i = 0; i < ui->containerTable->rowCount(); ++i) {
+        QTableWidgetItem *statusItem = ui->containerTable->item(i, 3);
+        QTableWidgetItem *timeItem = ui->containerTable->item(i, 4);
+        if (statusItem && statusItem->text() == "Running") {
+            QTime time = QTime::fromString(timeItem->text(), "hh:mm:ss");
+            time = time.addSecs(1);
+            timeItem->setText(time.toString("hh:mm:ss"));
+        }
     }
 }
 
-void ContainerTable::handlePlay(int row) {
-    // Implement what should happen when the play button is clicked
+void ContainerTable::handleDockerCommand(int row, const QString &command)
+{
+    QString imageName = ui->containerTable->item(row, 0)->text();
+    qDebug() << "Attempting to run command" << command << "for image" << imageName;
+
+    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+    QString path = env.value("PATH");
+    if (!path.contains("/usr/local/bin")) {
+        path = "/usr/local/bin:" + path;
+        env.insert("PATH", path);
+    }
+
+    QProcess *process = new QProcess(this);
+    process->setProcessEnvironment(env);
+    process->setProcessChannelMode(QProcess::MergedChannels);
+
+    QString pythonPath = QCoreApplication::applicationDirPath() + "/bundled_python/bin/python3.11";
+    QString scriptPath = QCoreApplication::applicationDirPath() + "/start_docker_image.py";
+
+    activeProcesses[row] = process;
+
+    connect(process, &QProcess::readyRead, this, [this, process]() {
+        QString output = process->readAll().trimmed();
+        qDebug() << "Docker script output:" << output;
+        ui->terminal->appendPlainText(output);
+
+        ui->terminal->verticalScrollBar()->setValue(ui->terminal->verticalScrollBar()->maximum());
+    });
+
+    connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [this, row, process, command](int exitCode, QProcess::ExitStatus exitStatus) {
+        qDebug() << "Process finished with exit code:" << exitCode << "and status:" << exitStatus;
+
+        if (exitCode == 0 && exitStatus == QProcess::NormalExit) {
+            QTableWidgetItem* statusItem = ui->containerTable->item(row, 3);
+            QTableWidgetItem* timeItem = ui->containerTable->item(row, 4);
+            if (statusItem) {
+                if (command == "start") {
+                    statusItem->setText("Running");
+                    timeItem->setText("00:00:00");
+                } else if (command == "stop") {
+                    statusItem->setText("Stopped");
+                    timeItem->setText("");
+                }
+            }
+        } else {
+            qDebug() << "Failed to execute the command. Exit code:" << exitCode << "Error status:" << exitStatus;
+            QMessageBox::critical(nullptr, "Docker Script Error", "Failed to execute the Docker command.");
+        }
+
+        activeProcesses.remove(row);
+    });
+
+    qDebug() << "Starting process" << pythonPath << scriptPath << imageName << command;
+    process->start(pythonPath, QStringList() << scriptPath << imageName << command);
 }
 
-void ContainerTable::handleStop(int row) {
-    // Implement what should happen when the stop button is clicked
+void ContainerTable::adjustColumnWidths()
+{
+    for (int i = 0; i < ui->containerTable->columnCount(); ++i) {
+        ui->containerTable->resizeColumnToContents(i);
+    }
 }
 
-void ContainerTable::handlePause(int row) {
-    // Implement what should happen when the pause button is clicked
-}
+void ContainerTable::displayLogInTerminal(const QString &log)
+{
+    ui->terminal->appendPlainText(log);
 
-void ContainerTable::handleInstall(int row) {
-    // Implement what should happen when the install button is clicked
+    QScrollBar *scrollBar = ui->terminal->verticalScrollBar();
+    scrollBar->setValue(scrollBar->maximum());
 }

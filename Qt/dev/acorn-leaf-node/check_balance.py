@@ -5,8 +5,8 @@ from web3 import Web3
 
 def get_blockchain_name(chain_id):
     chain_names = {
-        1: "Ethereum Mainnet",
-        11155111: "Sepolia Testnet",
+        1: "Ethereum",
+        11155111: "Sepolia",
     }
     return chain_names.get(chain_id, "Unknown Chain")
 
@@ -20,11 +20,11 @@ def main(address):
 
     chain_id = web3.eth.chain_id
     blockchain_name = get_blockchain_name(chain_id)
-    print(f"Connected to {blockchain_name}")
 
     balance = web3.eth.get_balance(address)
     eth_balance = web3.from_wei(balance, 'ether')
-    print(f"Balance: {eth_balance} ETH")
+    formatted_balance = f"{eth_balance:.4f}"
+    print(f"{blockchain_name}: {formatted_balance} ETH")
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

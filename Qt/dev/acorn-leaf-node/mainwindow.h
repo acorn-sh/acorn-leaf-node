@@ -2,10 +2,13 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTimer>
 #include "mainbuttons.h"
 #include "containertable.h"
 #include "terminal.h"
 #include "settingspage.h"
+#include "hubpage.h"
+#include "accountpage.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,8 +25,13 @@ public:
 public slots:
     void showDashboard();
     void showSettings();
-    void showBalance();
+    void showAccount();
+    void showHub();
     void updateRuntime();
+    void showHelpPage();
+
+private slots:
+    void updateAccountBalance();
 
 private:
     Ui::MainWindow *ui;
@@ -31,6 +39,11 @@ private:
     ContainerTable *containerTable;
     Terminal *terminal;
     SettingsPage *settingsPage;
+    QTimer *balanceUpdateTimer;
+    HubPage *hubPage;
+    AccountPage *accountPage;
+    void toggleTerminalExpansion();
+    void toggleTerminalExpansionHub();
 
     void setupUI();
     void setupConnections();

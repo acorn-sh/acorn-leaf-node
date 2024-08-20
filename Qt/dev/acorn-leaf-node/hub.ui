@@ -1,0 +1,16 @@
+<ui version="4.0">
+ <class>HubPage</class>
+ <widget class="QWidget" name="hubPage">
+  <layout class="QVBoxLayout" name="hubLayout">
+   <item>
+    <widget class="QLabel" name="hubLabel">
+     <property name="text">
+      <string>Hub Page Content</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

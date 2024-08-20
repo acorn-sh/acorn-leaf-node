@@ -11,6 +11,7 @@ class Terminal : public QObject
 public:
     Terminal(Ui::MainWindow *ui);
     void setupTerminal();
+    void scrollToBottom();
 
 private:
     Ui::MainWindow *ui;

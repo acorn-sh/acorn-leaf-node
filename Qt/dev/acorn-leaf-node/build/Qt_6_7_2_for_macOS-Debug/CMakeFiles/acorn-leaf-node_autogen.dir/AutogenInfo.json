@@ -292,9 +292,27 @@
 	"HEADERS" : 
 	[
 		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/accountpage.h",
+			"MU",
+			"EWIEGA46WW/moc_accountpage.cpp",
+			null
+		],
+		[
 			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/containertable.h",
 			"MU",
 			"EWIEGA46WW/moc_containertable.cpp",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/helppage.h",
+			"MU",
+			"EWIEGA46WW/moc_helppage.cpp",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/hubpage.h",
+			"MU",
+			"EWIEGA46WW/moc_hubpage.cpp",
 			null
 		],
 		[
@@ -380,7 +398,22 @@
 	"SOURCES" : 
 	[
 		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/accountpage.cpp",
+			"MU",
+			null
+		],
+		[
 			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/containertable.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/helppage.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/hubpage.cpp",
 			"MU",
 			null
 		],

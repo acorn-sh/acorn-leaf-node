@@ -1,0 +1,16 @@
+<ui version="4.0">
+ <class>AccountPage</class>
+ <widget class="QWidget" name="accountPage">
+  <layout class="QVBoxLayout" name="balanceLayout">
+   <item>
+    <widget class="QLabel" name="accountLabel">
+     <property name="text">
+      <string>Account page</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

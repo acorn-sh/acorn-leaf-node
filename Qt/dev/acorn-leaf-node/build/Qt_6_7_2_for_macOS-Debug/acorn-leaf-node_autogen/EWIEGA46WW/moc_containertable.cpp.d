@@ -79,7 +79,9 @@
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/resource.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/signal.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/wait.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QMap \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QObject \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QProcess \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/q20functional.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/q20memory.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/q20type_traits.h \
@@ -119,6 +121,7 @@
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qglobal.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qglobalstatic.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qhashfunctions.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qiodevice.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qiodevicebase.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qiterable.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qiterator.h \
@@ -126,6 +129,7 @@
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qlist.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qlogging.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qmalloc.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qmap.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qmath.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qmetacontainer.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qmetatype.h \
@@ -138,10 +142,13 @@
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qobjectdefs_impl.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qoverload.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qpair.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qprocess.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qprocessordetection.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qrefcount.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qscopedpointer.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qscopeguard.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qshareddata.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qshareddata_impl.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qstring.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qstringalgorithms.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qstringbuilder.h \
