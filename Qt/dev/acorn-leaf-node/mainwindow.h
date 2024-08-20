@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QTimer> // Include QTimer
+#include <QTimer>
 #include "mainbuttons.h"
 #include "containertable.h"
 #include "terminal.h"
@@ -31,7 +31,7 @@ public slots:
     void showHelpPage();
 
 private slots:
-    void updateAccountBalance(); // Slot for updating the account balance
+    void updateAccountBalance();
 
 private:
     Ui::MainWindow *ui;
@@ -39,10 +39,10 @@ private:
     ContainerTable *containerTable;
     Terminal *terminal;
     SettingsPage *settingsPage;
-    QTimer *balanceUpdateTimer; // Timer for updating the balance automatically
+    QTimer *balanceUpdateTimer;
     HubPage *hubPage;
     AccountPage *accountPage;
-    void toggleTerminalExpansion();        // Method to handle terminal expansion on dashboard
+    void toggleTerminalExpansion();
     void toggleTerminalExpansionHub();
 
     void setupUI();

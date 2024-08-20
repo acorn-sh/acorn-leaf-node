@@ -16,19 +16,19 @@ public:
     void populateHubTable();
 
 private slots:
-    void fetchDockerHubRepos();  // Slot to fetch repositories
+    void fetchDockerHubRepos();
 
 private:
     Ui::MainWindow *ui;
-    QMap<int, QProcess*> activeProcesses;  // To track running processes by row
+    QMap<int, QProcess*> activeProcesses;
 
-    void setupTable();  // Declare setupTable method
-    void adjustColumnWidths();  // Declare adjustColumnWidths method
-    void addControlButtons(int row);  // Declare addControlButtons method
-    void handleInstall(int row);  // Declare handleInstall method
-    void handleStatus(int row);  // Declare handleStatus method
-    void updateInstallButton(int row);  // Update the install button to check icon
-    void displayLogInTerminal(const QString &log);  // Display logs in the terminal
+    void setupTable();
+    void adjustColumnWidths();
+    void addControlButtons(int row);
+    void handleInstall(int row);
+    void handleStatus(int row);
+    void updateInstallButton(int row);
+    void displayLogInTerminal(const QString &log);
 };
 
 #endif // HUBPAGE_H

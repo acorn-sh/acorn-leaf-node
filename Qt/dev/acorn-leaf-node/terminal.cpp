@@ -1,5 +1,5 @@
 #include "terminal.h"
-#include <QScrollBar> // Ensure this header is included for QScrollBar
+#include <QScrollBar>
 
 Terminal::Terminal(Ui::MainWindow *ui) : ui(ui) {}
 

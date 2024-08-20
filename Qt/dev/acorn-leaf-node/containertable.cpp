@@ -16,7 +16,6 @@ ContainerTable::ContainerTable(Ui::MainWindow *ui) : ui(ui)
 
 void ContainerTable::setupTable()
 {
-    // Updated headers list with PORT after NET
     QStringList headers = {"Container Name", "Image ID", "Container ID", "Status", "Time", "CPU", "GPU", "MEM", "NET", "PORT"};
     ui->containerTable->setColumnCount(headers.size());
     ui->containerTable->setHorizontalHeaderLabels(headers);
@@ -40,7 +39,6 @@ void ContainerTable::populateContainerData()
 {
     QStringList sudoacornData;
 
-    // Set up the environment variables to ensure the Docker command is found
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
     QString path = env.value("PATH");
     if (!path.contains("/usr/local/bin")) {
@@ -52,13 +50,12 @@ void ContainerTable::populateContainerData()
     process->setProcessEnvironment(env);
     process->setProcessChannelMode(QProcess::MergedChannels);
 
-    // Define the path to Python and the script
     QString pythonPath = QCoreApplication::applicationDirPath() + "/bundled_python/bin/python3.11";
     QString scriptPath = QCoreApplication::applicationDirPath() + "/list_docker_image.py";
 
     connect(process, &QProcess::readyRead, [process, &sudoacornData, this]() {
         QString output = process->readAll();
-        displayLogInTerminal(output);  // Display output in terminal
+        displayLogInTerminal(output);
         sudoacornData = output.split("\n", Qt::SkipEmptyParts);
     });
 
@@ -70,19 +67,19 @@ void ContainerTable::populateContainerData()
     for (int i = 0; i < sudoacornData.size(); ++i) {
         QStringList details = sudoacornData[i].split("|", Qt::SkipEmptyParts);
 
-        if (details.size() < 9) continue;  // Adjust for new PORT column
+        if (details.size() < 9) continue;
 
         QString repository = details[0].trimmed();
         QString imageId = details[1].trimmed();
         QString containerId = details[2].trimmed();
         QString status = details[3].trimmed();
-        QString time = details[4].trimmed();  // Actual uptime
+        QString time = details[4].trimmed();
 
         QString cpu = details[5].trimmed();
-        QString gpu = "";  // Placeholder for GPU usage if needed
+        QString gpu = "";
         QString mem_usage = details[6].trimmed();
         QString net_io = details[7].trimmed();
-        QString port = details[8].trimmed();  // Port info
+        QString port = details[8].trimmed();
 
         ui->containerTable->setItem(i, 0, new QTableWidgetItem(repository));
         ui->containerTable->setItem(i, 1, new QTableWidgetItem(imageId));
@@ -93,7 +90,7 @@ void ContainerTable::populateContainerData()
         ui->containerTable->setItem(i, 6, new QTableWidgetItem(gpu));
         ui->containerTable->setItem(i, 7, new QTableWidgetItem(mem_usage));
         ui->containerTable->setItem(i, 8, new QTableWidgetItem(net_io));
-        ui->containerTable->setItem(i, 9, new QTableWidgetItem(port));  // Add port column
+        ui->containerTable->setItem(i, 9, new QTableWidgetItem(port));
 
         addControlButtons(i, status);
     }
@@ -104,12 +101,11 @@ void ContainerTable::populateContainerData()
 void ContainerTable::addControlButtons(int row, const QString &activeStatus)
 {
     QWidget* pWidget = new QWidget();
-    QHBoxLayout* pButtonLayout = new QHBoxLayout(pWidget);  // Horizontal layout for the buttons
+    QHBoxLayout* pButtonLayout = new QHBoxLayout(pWidget);
     pButtonLayout->setAlignment(Qt::AlignCenter);
-    pButtonLayout->setContentsMargins(0, 0, 0, 0); // Ensure there's no unnecessary padding
+    pButtonLayout->setContentsMargins(0, 0, 0, 0);
     pButtonLayout->setSpacing(5);
 
-    // Create buttons with icons and apply the stylesheet
     QPushButton* btnStart = new QPushButton();
     QPushButton* btnStop = new QPushButton();
     QPushButton* btnPause = new QPushButton();
@@ -125,7 +121,6 @@ void ContainerTable::addControlButtons(int row, const QString &activeStatus)
     btnPause->setFixedSize(24, 24);
     btnRestart->setFixedSize(24, 24);
 
-    // Apply the same stylesheet as defined in your application to ensure consistency
     QString buttonStyle = "QPushButton { background-color: #938ea4; }"
                           "QPushButton:hover { background-color: #fbdea3; }"
                           "QPushButton:pressed { background-color: #6d6781; }";
@@ -135,29 +130,25 @@ void ContainerTable::addControlButtons(int row, const QString &activeStatus)
     btnPause->setStyleSheet(buttonStyle);
     btnRestart->setStyleSheet(buttonStyle);
 
-    // Connect signals to slots for handling button actions
     connect(btnStart, &QPushButton::clicked, this, [this, row](){ handleDockerCommand(row, "start"); });
     connect(btnStop, &QPushButton::clicked, this, [this, row](){ handleDockerCommand(row, "stop"); });
     connect(btnPause, &QPushButton::clicked, this, [this, row](){ handleDockerCommand(row, "pause"); });
     connect(btnRestart, &QPushButton::clicked, this, [this, row](){ handleDockerCommand(row, "restart"); });
 
-    // Add buttons to the layout
     pButtonLayout->addWidget(btnStart);
     pButtonLayout->addWidget(btnStop);
     pButtonLayout->addWidget(btnPause);
     pButtonLayout->addWidget(btnRestart);
 
-    // Set the layout for the widget and place it in the table
     pWidget->setLayout(pButtonLayout);
     ui->containerTable->setCellWidget(row, 3, pWidget);
 }
 
-
 void ContainerTable::updateRuntime()
 {
     for (int i = 0; i < ui->containerTable->rowCount(); ++i) {
-        QTableWidgetItem *statusItem = ui->containerTable->item(i, 3); // Status column
-        QTableWidgetItem *timeItem = ui->containerTable->item(i, 4);   // Time column
+        QTableWidgetItem *statusItem = ui->containerTable->item(i, 3);
+        QTableWidgetItem *timeItem = ui->containerTable->item(i, 4);
         if (statusItem && statusItem->text() == "Running") {
             QTime time = QTime::fromString(timeItem->text(), "hh:mm:ss");
             time = time.addSecs(1);
@@ -168,7 +159,7 @@ void ContainerTable::updateRuntime()
 
 void ContainerTable::handleDockerCommand(int row, const QString &command)
 {
-    QString imageName = ui->containerTable->item(row, 0)->text();  // Assuming the image name is the repository
+    QString imageName = ui->containerTable->item(row, 0)->text();
     qDebug() << "Attempting to run command" << command << "for image" << imageName;
 
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
@@ -190,9 +181,8 @@ void ContainerTable::handleDockerCommand(int row, const QString &command)
     connect(process, &QProcess::readyRead, this, [this, process]() {
         QString output = process->readAll().trimmed();
         qDebug() << "Docker script output:" << output;
-        ui->terminal->appendPlainText(output);  // Display output in the terminal
+        ui->terminal->appendPlainText(output);
 
-        // Ensure terminal always scrolls to the bottom when new output is added.
         ui->terminal->verticalScrollBar()->setValue(ui->terminal->verticalScrollBar()->maximum());
     });
 
@@ -200,8 +190,8 @@ void ContainerTable::handleDockerCommand(int row, const QString &command)
         qDebug() << "Process finished with exit code:" << exitCode << "and status:" << exitStatus;
 
         if (exitCode == 0 && exitStatus == QProcess::NormalExit) {
-            QTableWidgetItem* statusItem = ui->containerTable->item(row, 3); // Status column
-            QTableWidgetItem* timeItem = ui->containerTable->item(row, 4);   // Time column
+            QTableWidgetItem* statusItem = ui->containerTable->item(row, 3);
+            QTableWidgetItem* timeItem = ui->containerTable->item(row, 4);
             if (statusItem) {
                 if (command == "start") {
                     statusItem->setText("Running");
@@ -234,7 +224,6 @@ void ContainerTable::displayLogInTerminal(const QString &log)
 {
     ui->terminal->appendPlainText(log);
 
-    // Scroll to the bottom of the terminal
     QScrollBar *scrollBar = ui->terminal->verticalScrollBar();
     scrollBar->setValue(scrollBar->maximum());
 }

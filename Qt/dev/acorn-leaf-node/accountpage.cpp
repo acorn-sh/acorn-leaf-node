@@ -10,12 +10,10 @@
 AccountPage::AccountPage(Ui::MainWindow *ui, QObject *parent)
     : QObject(parent), ui(ui)
 {
-    // Initialize UI elements
     accountLabel = ui->accountLabel;
-    privateKeyLabel = ui->privateKeyLabel;  // Assuming you have a QLabel for the private key
+    privateKeyLabel = ui->privateKeyLabel;
     generateAddressButton = ui->generateAddressButton;
 
-    // Set up the button click connection
     setupConnections();
 }
 
@@ -40,7 +38,6 @@ void AccountPage::generateNewEthereumAddress()
         QString outputString = QString(output).trimmed();
         qDebug() << "Python output:" << outputString;
 
-        // Parse the JSON output to extract the address and private key
         QJsonDocument doc = QJsonDocument::fromJson(output);
         QJsonObject obj = doc.object();
         QString address = obj.value("address").toString();
@@ -74,7 +71,6 @@ void AccountPage::displayEthereumAddress(const QString &address, const QString &
     }
 }
 
-// Public method to refresh the Ethereum address
 void AccountPage::refreshEthereumAddress()
 {
     QString appDirPath = QCoreApplication::applicationDirPath();

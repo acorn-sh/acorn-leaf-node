@@ -13,7 +13,7 @@ class HelpPage : public QDialog
 public:
     explicit HelpPage(QWidget *parent = nullptr);
     void populateHelpContent();
-    static bool shouldShowHelp();  // Checks if the HelpPage should be shown
+    static bool shouldShowHelp();
 
 private slots:
     void onCheckboxChanged(int state);

@@ -15,5 +15,5 @@ void MainButtons::setupConnections(QObject *mainWindow)
     connect(ui->settingsButton, &QPushButton::clicked, mainWin, &MainWindow::showSettings);
     connect(ui->accountButton, &QPushButton::clicked, mainWin, &MainWindow::showAccount);
     connect(ui->hubButton, &QPushButton::clicked, mainWin, &MainWindow::showHub);
-    connect(ui->helpButton, &QPushButton::clicked, mainWin, &MainWindow::showHelpPage); // Connect the help button
+    connect(ui->helpButton, &QPushButton::clicked, mainWin, &MainWindow::showHelpPage);
 }

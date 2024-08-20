@@ -20,12 +20,7 @@ def main(address):
 
     chain_id = web3.eth.chain_id
     blockchain_name = get_blockchain_name(chain_id)
-    print(f"Connected to {blockchain_name}")
-
-    balance = web3.eth.get_balance(address)
-    eth_balance = web3.from_wei(balance, 'ether')
-    formatted_balance = f"{eth_balance:.4f}"
-    print(f"Balance: {formatted_balance} ETH")
+    print(f"Network: {blockchain_name}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

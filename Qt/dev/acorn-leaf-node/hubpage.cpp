@@ -18,7 +18,7 @@ HubPage::HubPage(Ui::MainWindow *ui, QObject *parent)
 
 void HubPage::setupConnections(QObject *mainWindow)
 {
-    // Set up any connections related to the HubPage
+
 }
 
 void HubPage::setupTable()
@@ -102,7 +102,6 @@ void HubPage::fetchDockerHubRepos()
 
 void HubPage::addControlButtons(int row)
 {
-    // Create the install button with the appropriate icon and styles
     QWidget* installWidget = new QWidget();
     QHBoxLayout* installLayout = new QHBoxLayout(installWidget);
     installLayout->setContentsMargins(0, 0, 0, 0);
@@ -112,7 +111,6 @@ void HubPage::addControlButtons(int row)
     btnInstall->setIcon(QIcon(":/images/icons/download.svg"));
     btnInstall->setFixedSize(24, 24);
 
-    // Apply the stylesheet to btnInstall to include the hover effect
     QString buttonStyle = "QPushButton { background-color: #938ea4; }"
                           "QPushButton:hover { background-color: #fbdea3; }"
                           "QPushButton:pressed { background-color: #6d6781; }";
@@ -120,12 +118,10 @@ void HubPage::addControlButtons(int row)
 
     installLayout->addWidget(btnInstall);
 
-    // Connect the install button to its corresponding slot
     connect(btnInstall, &QPushButton::clicked, this, [this, row](){ handleInstall(row); });
 
     ui->hubTableWidget->setCellWidget(row, 4, installWidget);
 
-    // Create the status widget for the status column (initially empty)
     QWidget* statusWidget = new QWidget();
     QHBoxLayout* statusLayout = new QHBoxLayout(statusWidget);
     statusLayout->setContentsMargins(0, 0, 0, 0);
@@ -135,33 +131,28 @@ void HubPage::addControlButtons(int row)
 }
 
 void HubPage::handleInstall(int row) {
-    // Get the Docker Hub URL from the table
-    QString url = ui->hubTableWidget->item(row, 3)->text(); // Assuming the URL is in the 4th column
+    QString url = ui->hubTableWidget->item(row, 3)->text();
 
-    // Setup environment variables to ensure docker is found
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
     QString path = env.value("PATH");
-    if (!path.contains("/usr/local/bin")) {  // Modify this path based on your system
+    if (!path.contains("/usr/local/bin")) {
         path = "/usr/local/bin:" + path;
         env.insert("PATH", path);
     }
 
-    // Prepare the QProcess to execute the Python script
     QProcess *process = new QProcess(this);
     process->setProcessEnvironment(env);
 
-    // Define the path to Python and the script
     QString pythonPath = QCoreApplication::applicationDirPath() + "/bundled_python/bin/python3.11";
     QString scriptPath = QCoreApplication::applicationDirPath() + "/pull_docker_image.py";
 
-    // Update status column to show progress bar
     QWidget* statusWidget = new QWidget();
     QHBoxLayout* statusLayout = new QHBoxLayout(statusWidget);
     statusLayout->setContentsMargins(0, 0, 0, 0);
     statusLayout->setAlignment(Qt::AlignCenter);
 
     QProgressBar* progressBar = new QProgressBar();
-    progressBar->setRange(0, 0);  // Indeterminate progress
+    progressBar->setRange(0, 0);
     progressBar->setFixedHeight(20);
     progressBar->setTextVisible(false);
 

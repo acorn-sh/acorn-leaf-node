@@ -14,7 +14,6 @@ public:
     explicit AccountPage(Ui::MainWindow *ui, QObject *parent = nullptr);
     void setupConnections();
 
-    // Public method to refresh the Ethereum address
     void refreshEthereumAddress();
 
 private slots:
@@ -23,7 +22,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QLabel *accountLabel;
-    QLabel *privateKeyLabel; // For displaying private key
+    QLabel *privateKeyLabel;
     QPushButton *generateAddressButton;
 
     void displayEthereumAddress(const QString &address, const QString &privateKey = QString());
