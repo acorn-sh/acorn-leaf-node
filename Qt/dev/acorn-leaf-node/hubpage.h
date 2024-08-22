@@ -5,6 +5,7 @@
 #include <QProgressBar>
 #include <QProcess>
 #include "ui_mainwindow.h"
+#include "ResourceManager.h"
 
 class HubPage : public QObject
 {
@@ -12,6 +13,8 @@ class HubPage : public QObject
 
 public:
     explicit HubPage(Ui::MainWindow *ui, QObject *parent = nullptr);
+    ~HubPage() = default;
+
     void setupConnections(QObject *mainWindow);
     void populateHubTable();
 
@@ -21,6 +24,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QMap<int, QProcess*> activeProcesses;
+    ResourceManager *resourceManager;
 
     void setupTable();
     void adjustColumnWidths();

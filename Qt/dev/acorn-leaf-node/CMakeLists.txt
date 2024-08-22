@@ -31,13 +31,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         hubpage.h hubpage.cpp
         helppage.h helppage.cpp
         accountpage.h accountpage.cpp
-
-
-
-
-
-
-
+        resourcemanager.h resourcemanager.cpp
     )
 else()
     if(ANDROID)

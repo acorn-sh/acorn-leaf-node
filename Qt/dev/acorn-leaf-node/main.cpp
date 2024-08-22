@@ -2,6 +2,7 @@
 #include <QFile>
 #include <QTextStream>
 #include "mainwindow.h"
+#include "ResourceManager.h"
 
 int main(int argc, char *argv[])
 {
@@ -14,6 +15,7 @@ int main(int argc, char *argv[])
         qApp->setStyleSheet(ts.readAll());
     }
 
+    ResourceManager resourceManager;
     MainWindow w;
     w.show();
     return a.exec();

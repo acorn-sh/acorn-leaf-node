@@ -328,6 +328,12 @@
 			null
 		],
 		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/resourcemanager.h",
+			"MU",
+			"EWIEGA46WW/moc_resourcemanager.cpp",
+			null
+		],
+		[
 			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/settingspage.h",
 			"MU",
 			"EWIEGA46WW/moc_settingspage.cpp",
@@ -429,6 +435,11 @@
 		],
 		[
 			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/resourcemanager.cpp",
 			"MU",
 			null
 		],

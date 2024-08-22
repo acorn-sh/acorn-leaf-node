@@ -1,24 +1,28 @@
 #include "hubpage.h"
+#include "ResourceManager.h"
+
 #include <QDebug>
 #include <QPushButton>
 #include <QHBoxLayout>
 #include <QWidget>
 #include <QProgressBar>
 #include <QMessageBox>
-#include <QFile>
 #include <QProcess>
 #include <QScrollBar>
 
 HubPage::HubPage(Ui::MainWindow *ui, QObject *parent)
-    : QObject(parent), ui(ui)
+    : QObject(parent), ui(ui), resourceManager(new ResourceManager)
 {
     setupTable();
     populateHubTable();
 }
 
+// Remove the explicit destructor definition
+// The compiler will automatically generate a destructor that correctly handles the deletion of resourceManager
+
 void HubPage::setupConnections(QObject *mainWindow)
 {
-
+    // Set up any connections related to the HubPage
 }
 
 void HubPage::setupTable()
@@ -31,18 +35,11 @@ void HubPage::setupTable()
     ui->hubTableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->hubTableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->hubTableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);
-
     ui->hubTableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 
-    ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
-    ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
-    ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
-    ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
-
-    ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(4, QHeaderView::Interactive);
-    ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(5, QHeaderView::Interactive);
-
-    ui->hubTableWidget->horizontalHeader()->setMinimumSectionSize(70);
+    for (int i = 0; i < headers.size(); ++i) {
+        ui->hubTableWidget->horizontalHeader()->setSectionResizeMode(i, QHeaderView::ResizeToContents);
+    }
 
     adjustColumnWidths();
 }
@@ -73,8 +70,8 @@ void HubPage::populateHubTable()
 
 void HubPage::fetchDockerHubRepos()
 {
-    QString pythonPath = QCoreApplication::applicationDirPath() + "/bundled_python/bin/python3.11";
-    QString scriptPath = QCoreApplication::applicationDirPath() + "/fetch_acornsh_docker_hub.py";
+    QString pythonPath = resourceManager->getPythonPath();
+    QString scriptPath = resourceManager->getScriptPath("fetch_acornsh_docker_hub.py");
 
     QProcess process;
     process.start(pythonPath, QStringList() << scriptPath);
@@ -108,7 +105,7 @@ void HubPage::addControlButtons(int row)
     installLayout->setAlignment(Qt::AlignCenter);
 
     QPushButton* btnInstall = new QPushButton();
-    btnInstall->setIcon(QIcon(":/images/icons/download.svg"));
+    btnInstall->setIcon(resourceManager->getIcon("download"));
     btnInstall->setFixedSize(24, 24);
 
     QString buttonStyle = "QPushButton { background-color: #938ea4; }"
@@ -133,18 +130,13 @@ void HubPage::addControlButtons(int row)
 void HubPage::handleInstall(int row) {
     QString url = ui->hubTableWidget->item(row, 3)->text();
 
-    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
-    QString path = env.value("PATH");
-    if (!path.contains("/usr/local/bin")) {
-        path = "/usr/local/bin:" + path;
-        env.insert("PATH", path);
-    }
+    QProcessEnvironment env = resourceManager->getProcessEnvironment();
 
     QProcess *process = new QProcess(this);
     process->setProcessEnvironment(env);
 
-    QString pythonPath = QCoreApplication::applicationDirPath() + "/bundled_python/bin/python3.11";
-    QString scriptPath = QCoreApplication::applicationDirPath() + "/pull_docker_image.py";
+    QString pythonPath = resourceManager->getPythonPath();
+    QString scriptPath = resourceManager->getScriptPath("pull_docker_image.py");
 
     QWidget* statusWidget = new QWidget();
     QHBoxLayout* statusLayout = new QHBoxLayout(statusWidget);
@@ -153,7 +145,7 @@ void HubPage::handleInstall(int row) {
 
     QProgressBar* progressBar = new QProgressBar();
     progressBar->setRange(0, 0);
-    progressBar->setFixedHeight(20);
+    progressBar->setFixedHeight(1);
     progressBar->setTextVisible(false);
 
     statusLayout->addWidget(progressBar);
@@ -195,7 +187,7 @@ void HubPage::updateInstallButton(int row)
     installLayout->setAlignment(Qt::AlignCenter);
 
     QPushButton* btnInstalled = new QPushButton();
-    btnInstalled->setIcon(QIcon(":/images/icons/check.svg"));
+    btnInstalled->setIcon(resourceManager->getIcon("check"));
     btnInstalled->setFixedSize(24, 24);
     installLayout->addWidget(btnInstalled);
 
@@ -208,5 +200,3 @@ void HubPage::displayLogInTerminal(const QString &log)
     QScrollBar *scrollBar = ui->terminal->verticalScrollBar();
     scrollBar->setValue(scrollBar->maximum());
 }
-
-

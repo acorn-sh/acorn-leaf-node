@@ -105,7 +105,7 @@ void MainWindow::showAccount()
 
 void MainWindow::updateRuntime()
 {
-    containerTable->updateRuntime();
+    //containerTable->updateRuntime();
 }
 
 void MainWindow::updateAccountBalance()
