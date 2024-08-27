@@ -2780,6 +2780,7 @@
 /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/SettingsPage.cpp
 /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/main.cpp
 /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/MainButtons.cpp
+/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/BlockchainManager.cpp
 /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/SettingsPage.h
  mmc:Q_OBJECT
  mdp:/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/Availability.h
@@ -3053,12 +3054,10 @@
  mdp:/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsglobal.h
  mdp:/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qwidget.h
  uic:ui_MainWindow.h
-/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/BlockchainManager.cpp
 /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/HubTable.cpp
-/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Bricks.cpp
-/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/PaymentManager.cpp
 /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/HelpPage.cpp
-/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Components.h
+/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/PaymentManager.cpp
+/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Bricks.cpp
 /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/HubTable.h
  mmc:Q_OBJECT
  mdp:/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/Availability.h
@@ -3357,3 +3356,4 @@
  mdp:/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsglobal.h
  mdp:/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qwidget.h
  uic:ui_MainWindow.h
+/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Components.h
