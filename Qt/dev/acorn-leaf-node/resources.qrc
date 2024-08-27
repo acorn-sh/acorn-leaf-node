@@ -42,15 +42,17 @@
         <file>images/feature1.png</file>
         <file>images/feature2.png</file>
         <file>images/feature3.png</file>
+        <file>images/acorn_sh_logo.png</file>
         <file>check_balance.py</file>
         <file>check_web3py.py</file>
         <file>check_python.py</file>
-        <file>check_docker.py</file>
         <file>check_account.py</file>
-        <file>generate_work_address.py</file>
+        <file>check_docker.py</file>
         <file>docker_images.py</file>
         <file>docker_commands.py</file>
         <file>docker_containers.py</file>
         <file>eth_account.json</file>
+        <file>generate_work_address.py</file>
+        <file>generate_app_icons.py</file>        
     </qresource>
 </RCC>

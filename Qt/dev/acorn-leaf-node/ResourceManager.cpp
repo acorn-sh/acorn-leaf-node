@@ -64,6 +64,9 @@ QString ResourceManager::getFilePath(const QString& fileName) const {
 QStringList ResourceManager::getImagePaths() const {
     return QStringList({":/images/feature1.png", ":/images/feature2.png", ":/images/feature3.png"});
 }
+QStringList ResourceManager::getLogoPaths() const {
+    return QStringList({":/images/acorn_sh_logo.png"});
+}
 
 QIcon ResourceManager::getIcon(const QString& iconName) const {
     return QIcon(":/images/icons/" + iconName + ".svg");

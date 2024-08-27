@@ -40,6 +40,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         DashboardPage.h DashboardPage.cpp
         HubTable.h HubTable.cpp
         Components.h Components.cpp
+
+
     )
 else()
     if(ANDROID)

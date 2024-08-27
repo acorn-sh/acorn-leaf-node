@@ -72,13 +72,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 60,
+				"line" : 62,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 53,
+				"line" : 55,
 				"parent" : 0
 			},
 			{
@@ -360,7 +360,7 @@
 				30,
 				32,
 				34,
-				37
+				38
 			]
 		}
 	],
@@ -496,7 +496,7 @@
 				30,
 				32,
 				34,
-				37
+				38
 			]
 		},
 		{
@@ -519,7 +519,7 @@
 				29,
 				31,
 				33,
-				35
+				36
 			]
 		},
 		{
@@ -528,15 +528,16 @@
 			[
 				4,
 				13,
-				36
+				35,
+				37
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				38,
-				39
+				39,
+				40
 			]
 		}
 	],
@@ -726,14 +727,19 @@
 		},
 		{
 			"backtrace" : 4,
-			"path" : "Bricks.h",
+			"path" : "Components.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "Bricks.cpp",
+			"path" : "Components.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "generate_app_icons.py",
+			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 0,

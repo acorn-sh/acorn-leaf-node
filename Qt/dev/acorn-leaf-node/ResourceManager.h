@@ -17,6 +17,7 @@ public:
     QString getFilePath(const QString& fileName) const;
     QStringList getImagePaths() const;
     QIcon getIcon(const QString& iconName) const;
+    QStringList getLogoPaths() const;
     QProcessEnvironment getProcessEnvironment() const;
 
 private:
