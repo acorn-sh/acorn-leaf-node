@@ -10,6 +10,7 @@
         <file>images/icons/cloud.svg</file>
         <file>images/icons/cpu.svg</file>
         <file>images/icons/database.svg</file>
+        <file>images/icons/delete.svg</file>
         <file>images/icons/download.svg</file>
         <file>images/icons/globe.svg</file>
         <file>images/icons/hard-drive.svg</file>
@@ -24,14 +25,15 @@
         <file>images/icons/moon.svg</file>
         <file>images/icons/navigation.svg</file>
         <file>images/icons/pause.svg</file>
-        <file>images/icons/play.svg</file>
         <file>images/icons/power.svg</file>
         <file>images/icons/search.svg</file>
         <file>images/icons/server.svg</file>
         <file>images/icons/settings.svg</file>
         <file>images/icons/share.svg</file>
+        <file>images/icons/start.svg</file>
         <file>images/icons/stop.svg</file>
         <file>images/icons/sun.svg</file>
+        <file>images/icons/refresh.svg</file>
         <file>images/icons/restart.svg</file>
         <file>images/icons/twitter.svg</file>
         <file>images/icons/user.svg</file>
@@ -45,11 +47,10 @@
         <file>check_python.py</file>
         <file>check_docker.py</file>
         <file>check_account.py</file>
-        <file>fetch_acornsh_docker_hub.py</file>
         <file>generate_work_address.py</file>
-        <file>pull_docker_image.py</file>
-        <file>start_docker_image.py</file>
-        <file>list_docker_image.py</file>
+        <file>docker_images.py</file>
+        <file>docker_commands.py</file>
+        <file>docker_containers.py</file>
         <file>eth_account.json</file>
     </qresource>
 </RCC>

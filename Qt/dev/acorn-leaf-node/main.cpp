@@ -1,8 +1,10 @@
+#include "MainWindow.h"
+#include "ResourceManager.h"
+
 #include <QApplication>
 #include <QFile>
 #include <QTextStream>
-#include "mainwindow.h"
-#include "ResourceManager.h"
+
 
 int main(int argc, char *argv[])
 {

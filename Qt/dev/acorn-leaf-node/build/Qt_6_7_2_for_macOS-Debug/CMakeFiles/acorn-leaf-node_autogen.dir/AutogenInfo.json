@@ -282,6 +282,15 @@
 		"/Users/platon1/DEV/Qt/6.7.2/macos/lib/cmake/Qt6Widgets/Qt6QMacStylePluginTargets.cmake",
 		"/Users/platon1/DEV/Qt/6.7.2/macos/lib/cmake/Qt6Widgets/Qt6QMacStylePluginTargets-relwithdebinfo.cmake",
 		"/Users/platon1/DEV/Qt/6.7.2/macos/lib/cmake/Qt6Widgets/Qt6QMacStylePluginAdditionalTargetInfo.cmake",
+		"/Users/platon1/DEV/Qt/6.7.2/macos/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfigVersion.cmake",
+		"/Users/platon1/DEV/Qt/6.7.2/macos/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfigVersionImpl.cmake",
+		"/Users/platon1/DEV/Qt/6.7.2/macos/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfig.cmake",
+		"/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/Users/platon1/DEV/Qt/6.7.2/macos/lib/cmake/Qt6Concurrent/Qt6ConcurrentDependencies.cmake",
+		"/Users/platon1/DEV/Qt/6.7.2/macos/lib/cmake/Qt6Concurrent/Qt6ConcurrentTargets.cmake",
+		"/Users/platon1/DEV/Qt/6.7.2/macos/lib/cmake/Qt6Concurrent/Qt6ConcurrentTargets-relwithdebinfo.cmake",
+		"/Users/platon1/DEV/Qt/6.7.2/macos/lib/cmake/Qt6Concurrent/Qt6ConcurrentAdditionalTargetInfo.cmake",
+		"/Users/platon1/DEV/Qt/6.7.2/macos/lib/cmake/Qt6Concurrent/Qt6ConcurrentVersionlessTargets.cmake",
 		"/Users/platon1/DEV/Qt/6.7.2/macos/lib/cmake/Qt6/macos/Info.plist.app.in",
 		"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/resources.qrc"
 	],
@@ -292,64 +301,106 @@
 	"HEADERS" : 
 	[
 		[
-			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/accountpage.h",
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/AccountPage.h",
 			"MU",
-			"EWIEGA46WW/moc_accountpage.cpp",
+			"EWIEGA46WW/moc_AccountPage.cpp",
 			null
 		],
 		[
-			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/containertable.h",
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/BlockchainManager.h",
 			"MU",
-			"EWIEGA46WW/moc_containertable.cpp",
+			"EWIEGA46WW/moc_BlockchainManager.cpp",
 			null
 		],
 		[
-			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/helppage.h",
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Components.h",
 			"MU",
-			"EWIEGA46WW/moc_helppage.cpp",
+			"EWIEGA46WW/moc_Components.cpp",
 			null
 		],
 		[
-			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/hubpage.h",
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/ContainerInfo.h",
 			"MU",
-			"EWIEGA46WW/moc_hubpage.cpp",
+			"EWIEGA46WW/moc_ContainerInfo.cpp",
 			null
 		],
 		[
-			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/mainbuttons.h",
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/DashboardPage.h",
 			"MU",
-			"EWIEGA46WW/moc_mainbuttons.cpp",
+			"EWIEGA46WW/moc_DashboardPage.cpp",
 			null
 		],
 		[
-			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/mainwindow.h",
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/DashboardTable.h",
 			"MU",
-			"EWIEGA46WW/moc_mainwindow.cpp",
+			"EWIEGA46WW/moc_DashboardTable.cpp",
 			null
 		],
 		[
-			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/resourcemanager.h",
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/HelpPage.h",
 			"MU",
-			"EWIEGA46WW/moc_resourcemanager.cpp",
+			"EWIEGA46WW/moc_HelpPage.cpp",
 			null
 		],
 		[
-			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/settingspage.h",
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/HubPage.h",
 			"MU",
-			"EWIEGA46WW/moc_settingspage.cpp",
+			"EWIEGA46WW/moc_HubPage.cpp",
 			null
 		],
 		[
-			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/terminal.h",
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/HubTable.h",
 			"MU",
-			"EWIEGA46WW/moc_terminal.cpp",
+			"EWIEGA46WW/moc_HubTable.cpp",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/MainButtons.h",
+			"MU",
+			"EWIEGA46WW/moc_MainButtons.cpp",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/MainWindow.h",
+			"MU",
+			"EWIEGA46WW/moc_MainWindow.cpp",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/PaymentManager.h",
+			"MU",
+			"EWIEGA46WW/moc_PaymentManager.cpp",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/PythonServiceManager.h",
+			"MU",
+			"EWIEGA46WW/moc_PythonServiceManager.cpp",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/ResourceManager.h",
+			"MU",
+			"EWIEGA46WW/moc_ResourceManager.cpp",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/SettingsPage.h",
+			"MU",
+			"EWIEGA46WW/moc_SettingsPage.cpp",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Terminal.h",
+			"MU",
+			"EWIEGA46WW/moc_Terminal.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug/acorn-leaf-node_autogen/include",
 	"MOC_COMPILATION_FILE" : "/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug/acorn-leaf-node_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEFINITIONS" : [ "QT_CONCURRENT_LIB", "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -367,6 +418,8 @@
 		"/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework",
 		"/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Headers",
 		"/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework",
+		"/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtConcurrent.framework/Headers",
+		"/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtConcurrent.framework",
 		"/usr/include",
 		"/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include"
 	],
@@ -404,52 +457,82 @@
 	"SOURCES" : 
 	[
 		[
-			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/accountpage.cpp",
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/AccountPage.cpp",
 			"MU",
 			null
 		],
 		[
-			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/containertable.cpp",
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/BlockchainManager.cpp",
 			"MU",
 			null
 		],
 		[
-			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/helppage.cpp",
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Components.cpp",
 			"MU",
 			null
 		],
 		[
-			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/hubpage.cpp",
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/DashboardPage.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/DashboardTable.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/HelpPage.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/HubPage.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/HubTable.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/MainButtons.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/MainWindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/PaymentManager.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/PythonServiceManager.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/ResourceManager.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/SettingsPage.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Terminal.cpp",
 			"MU",
 			null
 		],
 		[
 			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/main.cpp",
-			"MU",
-			null
-		],
-		[
-			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/mainbuttons.cpp",
-			"MU",
-			null
-		],
-		[
-			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/mainwindow.cpp",
-			"MU",
-			null
-		],
-		[
-			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/resourcemanager.cpp",
-			"MU",
-			null
-		],
-		[
-			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/settingspage.cpp",
-			"MU",
-			null
-		],
-		[
-			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/terminal.cpp",
 			"MU",
 			null
 		]

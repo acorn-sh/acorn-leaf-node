@@ -9,18 +9,19 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+# Find and include the required Qt components, including QtConcurrent
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Concurrent)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Concurrent)
 
 set(PROJECT_SOURCES
     main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
-    mainbuttons.h mainbuttons.cpp
-    containertable.h containertable.cpp
-    terminal.h terminal.cpp
-    settingspage.h settingspage.cpp
+    MainWindow.cpp
+    MainWindow.h
+    MainWindow.ui
+    MainButtons.h MainButtons.cpp
+    DashboardTable.h DashboardTable.cpp
+    Terminal.h Terminal.cpp
+    SettingsPage.h SettingsPage.cpp
     resources.qrc
 )
 
@@ -28,10 +29,17 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(acorn-leaf-node
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        hubpage.h hubpage.cpp
-        helppage.h helppage.cpp
-        accountpage.h accountpage.cpp
-        resourcemanager.h resourcemanager.cpp
+        HubPage.h HubPage.cpp
+        HelpPage.h HelpPage.cpp
+        AccountPage.h AccountPage.cpp
+        ResourceManager.h ResourceManager.cpp
+        BlockchainManager.h BlockchainManager.cpp
+        PaymentManager.h PaymentManager.cpp
+        PythonServiceManager.h PythonServiceManager.cpp
+        ContainerInfo.h
+        DashboardPage.h DashboardPage.cpp
+        HubTable.h HubTable.cpp
+        Components.h Components.cpp
     )
 else()
     if(ANDROID)
@@ -41,7 +49,8 @@ else()
     endif()
 endif()
 
-target_link_libraries(acorn-leaf-node PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+# Link against the required Qt libraries, including QtConcurrent
+target_link_libraries(acorn-leaf-node PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Concurrent)
 
 set_target_properties(acorn-leaf-node PROPERTIES
     MACOSX_BUNDLE TRUE
@@ -55,12 +64,6 @@ install(TARGETS acorn-leaf-node
 )
 
 # Copy Python scripts and interpreter to the executable directory
-# python3.11 -m venv bundled_python
-# source bundled_python/bin/activate  # On Windows, use venv\Scripts\activate
-# pip install pyinstaller
-# pip install web3
-# pip install "web3[tester]"
-
 add_custom_command(TARGET acorn-leaf-node POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
         ${CMAKE_SOURCE_DIR}/bundled_python
@@ -71,15 +74,13 @@ add_custom_command(TARGET acorn-leaf-node POST_BUILD
         ${CMAKE_SOURCE_DIR}/check_balance.py
         ${CMAKE_SOURCE_DIR}/check_docker.py
         ${CMAKE_SOURCE_DIR}/check_account.py
-        ${CMAKE_SOURCE_DIR}/fetch_acornsh_docker_hub.py
         ${CMAKE_SOURCE_DIR}/generate_work_address.py
-        ${CMAKE_SOURCE_DIR}/pull_docker_image.py
-        ${CMAKE_SOURCE_DIR}/start_docker_image.py
-        ${CMAKE_SOURCE_DIR}/list_docker_image.py
+        ${CMAKE_SOURCE_DIR}/docker_commands.py
+        ${CMAKE_SOURCE_DIR}/docker_containers.py
+        ${CMAKE_SOURCE_DIR}/docker_images.py
         ${CMAKE_SOURCE_DIR}/eth_account.json
         $<TARGET_FILE_DIR:acorn-leaf-node>
 )
-
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(acorn-leaf-node)
