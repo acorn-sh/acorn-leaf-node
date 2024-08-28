@@ -22,6 +22,14 @@ rule CXX_COMPILER__acorn-leaf-node_unscanned_Debug
 
 
 #############################################
+# Rule for copying OS X bundle content file.
+
+rule COPY_OSX_CONTENT
+  command = /opt/homebrew/Cellar/cmake/3.29.3/bin/cmake -E copy $in $out
+  description = Copying OS X Content $out
+
+
+#############################################
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__acorn-leaf-node_Debug

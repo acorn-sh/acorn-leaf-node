@@ -40,8 +40,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         DashboardPage.h DashboardPage.cpp
         HubTable.h HubTable.cpp
         Components.h Components.cpp
-
-
     )
 else()
     if(ANDROID)
@@ -83,6 +81,32 @@ add_custom_command(TARGET acorn-leaf-node POST_BUILD
         ${CMAKE_SOURCE_DIR}/eth_account.json
         $<TARGET_FILE_DIR:acorn-leaf-node>
 )
+
+# Platform-specific icon handling
+
+# macOS
+if(APPLE)
+    set(MACOSX_BUNDLE_ICON_FILE "AppIcon.icns")
+    set_source_files_properties(${CMAKE_SOURCE_DIR}/output_icons/macos/AppIcon.icns PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
+    target_sources(acorn-leaf-node PRIVATE ${CMAKE_SOURCE_DIR}/output_icons/macos/AppIcon.icns)
+endif()
+
+# Windows
+if(WIN32)
+    set(WINDOWS_ICON ${CMAKE_SOURCE_DIR}/output_icons/windows/AppIcon.ico)
+    set_target_properties(acorn-leaf-node PROPERTIES WIN32_EXECUTABLE TRUE)
+    target_sources(acorn-leaf-node PRIVATE ${WINDOWS_ICON})
+endif()
+
+# Linux
+if(UNIX AND NOT APPLE)
+    # Copy the PNG icons for Linux
+    foreach(ICON_SIZE 16 32 48 64 128 256)
+        install(FILES ${CMAKE_SOURCE_DIR}/output_icons/linux/${ICON_SIZE}x${ICON_SIZE}.png
+                DESTINATION /usr/share/icons/hicolor/${ICON_SIZE}x${ICON_SIZE}/apps
+                RENAME acorn-leaf-node.png)
+    endforeach()
+endif()
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(acorn-leaf-node)

@@ -21,7 +21,8 @@
 			"find_package",
 			"find_dependency",
 			"_qt_internal_find_third_party_dependencies",
-			"_qt_internal_find_qt_dependencies"
+			"_qt_internal_find_qt_dependencies",
+			"target_sources"
 		],
 		"files" : 
 		[
@@ -72,13 +73,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 62,
+				"line" : 60,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 55,
+				"line" : 53,
 				"parent" : 0
 			},
 			{
@@ -240,6 +241,12 @@
 				"file" : 12,
 				"line" : 62,
 				"parent" : 35
+			},
+			{
+				"command" : 12,
+				"file" : 1,
+				"line" : 91,
+				"parent" : 0
 			}
 		]
 	},
@@ -737,8 +744,8 @@
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 4,
-			"path" : "generate_app_icons.py",
+			"backtrace" : 37,
+			"path" : "output_icons/macos/AppIcon.icns",
 			"sourceGroupIndex" : 2
 		},
 		{
