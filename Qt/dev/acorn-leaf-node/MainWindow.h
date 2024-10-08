@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "TrayIcon.h"
 
 class ResourceManager;
 class PythonServiceManager;
@@ -29,6 +30,9 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+protected:
+    void closeEvent(QCloseEvent *event) override;
+
 public slots:
     void showDashboard();
     void showSettings();
@@ -45,6 +49,9 @@ private slots:
     void updateAccountBalance();
     void toggleTerminalExpansion();
 
+    void minimizeToTray();
+    void restoreFromTray();
+
 private:
     Ui::MainWindow *ui;
     ResourceManager *resourceManager;
@@ -60,6 +67,8 @@ private:
     HubTable *hubTable;
     AccountPage *accountPage;
     QTimer *balanceUpdateTimer;
+
+    TrayIcon *trayIcon;
 };
 
 #endif // MAINWINDOW_H

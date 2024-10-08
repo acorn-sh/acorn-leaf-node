@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 
 import os
 import requests
@@ -16,7 +15,7 @@ def download_image_from_url(url):
         sys.exit(1)
 
 def get_logo_paths():
-    return "https://raw.githubusercontent.com/acorn-sh/acorn-leaf-node/acorn_temp_05/Qt/dev/acorn-leaf-node/images/acorn_sh_logo.png?token=GHSAT0AAAAAACVV2M6MSG4K4D4OKINNTR3IZWOMVGQ"  # Replace with your logo URL or local path
+    return "https://raw.githubusercontent.com/acorn-sh/acorn-leaf-node/acorn_temp_05/Qt/dev/acorn-leaf-node/images/acorn_sh_logo.png?token=GHSAT0AAAAAACVV2M6MM7OD62PZ67F647UUZWON3BQ"
 
 def generate_mac_icons(img, output_dir):
     iconset_dir = os.path.join(output_dir, "AppIcon.iconset")
@@ -28,7 +27,7 @@ def generate_mac_icons(img, output_dir):
         resized_img = img.resize((size, size), Image.Resampling.LANCZOS)
         resized_img.save(os.path.join(iconset_dir, f"icon_{size}x{size}.png"))
 
-    icns_path = os.path.join(output_dir, "app.icns")
+    icns_path = os.path.join(output_dir, "AppIcon.icns")
     subprocess.run(["iconutil", "-c", "icns", iconset_dir, "-o", icns_path])
 
 def generate_windows_icons(img, output_dir):

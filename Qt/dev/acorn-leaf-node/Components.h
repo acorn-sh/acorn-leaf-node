@@ -15,7 +15,7 @@ public:
     Components(ResourceManager* resourceManager);
 
     QWidget* createProgressBarWidget(int height = 1, QWidget* parent = nullptr) const;
-    QPushButton* createButtonWithIcon(const QString& iconName, const QString& buttonStyle = defaultButtonStyle, int width = defaultButtonWidth, int height = defaultButtonHeight, QWidget* parent = nullptr) const;
+    QPushButton* createButtonWithIcon(const QString& iconName, int width = defaultButtonWidth, int height = defaultButtonHeight, QWidget* parent = nullptr) const;
 
     static const QString defaultButtonStyle;
     static const int defaultButtonWidth;
@@ -26,3 +26,4 @@ private:
 };
 
 #endif // COMPONENTS_H
+

@@ -22,6 +22,7 @@ private slots:
     void handleStop(int row);
     void handlePause(int row);
     void handleRestart(int row);
+    void handleDelete(int row);
 
     // New slot
     void refreshTable();

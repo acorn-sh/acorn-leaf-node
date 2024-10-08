@@ -30,7 +30,6 @@ void HubPage::setupTable()
     QStringList headers = {"Repository Name", "Description", "Stars", "Link", "Status"};
     ui->hubTableWidget->setColumnCount(headers.size());
     ui->hubTableWidget->setHorizontalHeaderLabels(headers);
-    ui->hubTableWidget->setStyleSheet("background-color: #d5d3e0; color: black;");
 
     ui->hubTableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->hubTableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -335,4 +334,3 @@ void HubPage::replaceButtonsWithProgressBar(int row)
 
     ui->hubTableWidget->setCellWidget(row, 4, progressWidget);
 }
-

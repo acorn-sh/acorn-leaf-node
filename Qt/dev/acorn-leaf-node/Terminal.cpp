@@ -10,7 +10,7 @@ Terminal::Terminal(QPlainTextEdit *terminalWidget, QPushButton *expandButton, QO
 void Terminal::setupTerminal()
 {
     terminalWidget->setReadOnly(true);
-    terminalWidget->setStyleSheet("background-color: #d5d3e0; color: black;");
+    terminalWidget->setStyleSheet("background-color: #f6f2e8; color: black;");
     terminalWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
     terminalWidget->document()->setDocumentMargin(0);

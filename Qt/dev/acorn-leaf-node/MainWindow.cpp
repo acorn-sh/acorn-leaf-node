@@ -12,6 +12,7 @@
 #include "MainButtons.h"
 #include "SettingsPage.h"
 #include "Terminal.h"
+#include "TrayIcon.h"
 
 #include <QTimer>
 #include <QTime>
@@ -20,12 +21,21 @@
 #include <QCoreApplication>
 #include <QMessageBox>
 #include <QtConcurrent/QtConcurrent>
+#include <QIcon>
+#include <QCloseEvent>
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow)
+    : QMainWindow(parent), ui(new Ui::MainWindow), resourceManager(new ResourceManager()), trayIcon(new TrayIcon(resourceManager, this))
 {
     ui->setupUi(this);
     this->setFixedSize(1100, 600);
+
+    // TrayIcon
+    connect(trayIcon, &TrayIcon::restoreRequested, this, &MainWindow::restoreFromTray);
+    connect(trayIcon, &TrayIcon::quitRequested, qApp, &QApplication::quit);
+
+    trayIcon->show();
+
 
     connect(ui->refreshDashboardButton, &QPushButton::clicked, dashboardPage, &DashboardPage::handleRefreshDashboard);
 
@@ -88,6 +98,8 @@ MainWindow::~MainWindow()
     delete blockchainManager;
     delete paymentManager;
     delete pythonServiceManager;
+    delete trayIcon;
+
 }
 
 void MainWindow::showHelpPage() {
@@ -186,6 +198,27 @@ void MainWindow::updateAccountBalance()
 
     QString pythonPath = QCoreApplication::applicationDirPath() + "/bundled_python/bin/python3.11";
     process->start(pythonPath, QStringList() << QCoreApplication::applicationDirPath() + "/check_balance.py" << address);
+}
+
+void MainWindow::minimizeToTray()
+{
+    hide();
+    trayIcon->showMessage("Acorn SH",
+                                 "Application minimized to tray.",
+                                 QSystemTrayIcon::Information,
+                                 3000); // 3 seconds
+}
+
+void MainWindow::restoreFromTray()
+{
+    show();
+    activateWindow();
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    minimizeToTray();
+    event->ignore();
 }
 
 void MainWindow::toggleTerminalExpansion()

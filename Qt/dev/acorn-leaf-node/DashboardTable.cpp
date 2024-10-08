@@ -9,10 +9,14 @@ DashboardTable::DashboardTable(Ui::MainWindow* ui, ResourceManager* resourceMana
 {
     components = new Components(resourceManager);
 
+    setupTable();
+}
+
+void::DashboardTable::setupTable() {
     QStringList headers = {"Image ID", "Container ID", "Status", "Time", "CPU", "GPU", "MEM", "NET", "PORT", "Rate", "Total"};
     ui->dashboardTable->setColumnCount(headers.size());
     ui->dashboardTable->setHorizontalHeaderLabels(headers);
-    ui->dashboardTable->setStyleSheet("background-color: #d5d3e0; color: black;");
+    ui->dashboardTable->setStyleSheet("background-color: #f6f2e8; color: black;");
 
     ui->dashboardTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->dashboardTable->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -33,7 +37,7 @@ DashboardTable::~DashboardTable() {
 QStringList DashboardTable::getRunningContainers()
 {
     QString pythonPath = resourceManager->getPythonPath();
-    QString scriptPath = resourceManager->getScriptPath("list_docker_containers.py");
+    QString scriptPath = resourceManager->getScriptPath("docker_containers.py");
 
     QProcess process;
     process.setProcessEnvironment(resourceManager->getProcessEnvironment());
@@ -47,7 +51,7 @@ QStringList DashboardTable::getRunningContainers()
 QStringList DashboardTable::getContainerStats()
 {
     QString pythonPath = resourceManager->getPythonPath();
-    QString scriptPath = resourceManager->getScriptPath("list_docker_containers.py");
+    QString scriptPath = resourceManager->getScriptPath("docker_containers.py");
 
     QProcess process;
     process.setProcessEnvironment(resourceManager->getProcessEnvironment());
@@ -58,7 +62,21 @@ QStringList DashboardTable::getContainerStats()
     return output.split("\n", Qt::SkipEmptyParts);
 }
 
-void DashboardTable::populateDashboardTable(const QStringList& containers, const QStringList& stats)
+QStringList DashboardTable::getContainerInfo(const QString container_id)
+{
+    QString pythonPath = resourceManager->getPythonPath();
+    QString scriptPath = resourceManager->getScriptPath("docker_containers.py");
+
+    QProcess process;
+    process.setProcessEnvironment(resourceManager->getProcessEnvironment());
+    process.start(pythonPath, QStringList() << scriptPath << "-c" << "get_container_info" << container_id);
+    process.waitForFinished();
+
+    QString output = process.readAll().trimmed();
+    return output.split("\n", Qt::SkipEmptyParts);
+}
+
+void DashboardTable::populateDashboardTable(const QStringList& containers, const QStringList& stats, const QStringList& info)
 {
     ui->dashboardTable->setRowCount(0);  // Clear the table
     containerIdToRowMap.clear();  // Clear the container ID to row mapping
@@ -72,10 +90,10 @@ void DashboardTable::populateDashboardTable(const QStringList& containers, const
             QStringList rowData;
             QString containerId = jsonObject.value("container_id").toString();
 
-            rowData << jsonObject.value("image").toString()
+            rowData << jsonObject.value("image").toString() // image
                     << containerId
                     << "" // Placeholder for Status Buttons
-                    << jsonObject.value("created").toString()
+                    << jsonObject.value("created").toString() // Time
                     << ""  // Placeholder for CPU
                     << ""  // Placeholder for GPU
                     << ""  // Placeholder for MEM
@@ -89,14 +107,12 @@ void DashboardTable::populateDashboardTable(const QStringList& containers, const
             for (int i = 0; i < rowData.size(); ++i) {
                 ui->dashboardTable->setItem(row, i, new QTableWidgetItem(rowData[i].trimmed()));
             }
-
             // Store the mapping of container ID to row index
             containerIdToRowMap[containerId] = row;
 
             addControlButtons(row);
         }
     }
-
     // Second loop: update the existing rows with the statistics
     for (const QString& stat : stats) {
         QJsonDocument doc = QJsonDocument::fromJson(stat.toUtf8());
@@ -129,11 +145,13 @@ void DashboardTable::addControlButtons(int row)
     QPushButton* btnStop = components->createButtonWithIcon("stop");
     QPushButton* btnPause = components->createButtonWithIcon("pause");
     QPushButton* btnRestart = components->createButtonWithIcon("restart");
+    QPushButton* btnDelete = components->createButtonWithIcon("delete");
 
     controlLayout->addWidget(btnStart);
     controlLayout->addWidget(btnStop);
     controlLayout->addWidget(btnPause);
     controlLayout->addWidget(btnRestart);
+    controlLayout->addWidget(btnDelete);
 
     controlWidget->setLayout(controlLayout);
     ui->dashboardTable->setCellWidget(row, 2, controlWidget);
@@ -154,6 +172,10 @@ void DashboardTable::addControlButtons(int row)
         emit restartRequested(row);
         replaceButtonsWithProgressBar(row);
     });
+    connect(btnDelete, &QPushButton::clicked, this, [this, row]() {
+        emit deleteRequested(row);
+        replaceButtonsWithProgressBar(row);
+    });
 }
 
 void DashboardTable::replaceButtonsWithProgressBar(int row)
@@ -171,12 +193,20 @@ void DashboardTable::executeDockerCommand(int row, const QString& containerId, c
 
     QProcess* process = new QProcess(this);
     process->setProcessEnvironment(resourceManager->getProcessEnvironment());
-    process->start(pythonPath, QStringList() << scriptPath << containerId << command);
+
+    // Split the command into the base command and any options
+    QStringList commandParts = command.split(' ');
+    QString baseCommand = commandParts.takeFirst(); // Get the first part (e.g., "rm")
+    QStringList options = commandParts; // The rest are options (e.g., "--force")
+
+    // Start the process with the command and options
+    process->start(pythonPath, QStringList() << scriptPath << containerId << baseCommand << options);
 
     connect(process, &QProcess::readyRead, this, [this, process]() {
         QString output = process->readAll().trimmed();
         emit commandOutputReady(output);
         qDebug() << "Command Output:" << output;
+
     });
 
     connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [this, row]() {

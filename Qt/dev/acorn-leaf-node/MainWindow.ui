@@ -15,50 +15,62 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true">* {
+    <string notr="true">/* General widget styles */
+* {
     border: none;
     background-color: transparent;
-    color: fff;
-    }
+    color: #000;
+}
 
-    #centralwidget {
-        background-color: #ada9bb;
-    }
+/* Central widget background */
+#centralwidget {
+    background-color: #f8f7f5;
+}
 
-    QPushButton {
-        padding: 10px;
-        background-color: #938ea4;
-        color: fff;
-    }
+/* QPushButton styles */
+QPushButton {
+    padding: 10px;
+    border: 2px solid #928ea2;
+    border-radius: 5px;
+}
 
-    QPushButton:pressed {
-        background-color: #6d6781;
-    }
+QPushButton:pressed {
+    background-color: #f1bd4b;
+}
 
-    QPushButton:checked {
-        background-color: #938ea4;
-    }
+QPushButton:checked {
+    border: 2px solid #f1bd4b;
+}
 
-    QPushButton:hover {
-        background-color: #fbdea3;
-    }
+QPushButton:hover {
+    border: 2px solid #f1bd4b;
+}
 
-    QPushButton[flat=&quot;false&quot;] {
-        border: 1px solid #0b2833;
-    }
+/* Main body custom widget */
+#main_body {
+    background-color: #ada9bb;
+    border-radius: 10px;
+}
 
-    #main_body {
-        background-color: #ada9bb;
-        border-radius: 10px;
-    }
+/* QLineEdit styles */
+QLineEdit {
+    border: 2px solid #0b2833;
+    background-color: #f6f2e8;
+    color: #000000;
+    padding: 5px;
+    border-radius: 0px;
+}
 
-    QLineEdit {
-        border: 2px solid #0b2833;
-        background-color: #ada9bb;
-        color: #000000;
-        padding: 5px;
-        border-radius: 0px;
-    }
+/* Dashboard table style */
+QTableView#dashboardTable {
+    background-color: #f6f2e8;
+    color: black;
+    gridline-color: #dcdcdc; 
+    selection-background-color: #e0dcdc;
+    selection-color: black;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
 </string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -221,6 +233,17 @@
               <property name="icon">
                <iconset resource="resources.qrc">
                 <normaloff>:/images/icons/power.svg</normaloff>:/images/icons/power.svg</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_3">
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="resources.qrc">
+                <normaloff>:/images/icons/zap.svg</normaloff>:/images/icons/zap.svg</iconset>
               </property>
              </widget>
             </item>

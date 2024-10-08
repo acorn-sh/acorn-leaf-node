@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 
 from web3 import Web3
 import os

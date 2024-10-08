@@ -21,7 +21,9 @@ public:
 
     QStringList getRunningContainers();
     QStringList getContainerStats();
-    void populateDashboardTable(const QStringList& containers, const QStringList& stats);
+    QStringList getContainerInfo(const QString container_id);
+
+    void populateDashboardTable(const QStringList& containers, const QStringList& stats, const QStringList& info);
     void replaceButtonsWithProgressBar(int row);
     void executeDockerCommand(int row, const QString& containerId, const QString& command);
 
@@ -30,16 +32,19 @@ signals:
     void stopRequested(int row);
     void pauseRequested(int row);
     void restartRequested(int row);
+    void deleteRequested(int row);
 
     void commandOutputReady(const QString& output);
     void dataUpdated();
 
 private:
+    void setupTable();
+
     Ui::MainWindow* ui;
     ResourceManager* resourceManager;
     Components* components;
 
-    QMap<QString, int> containerIdToRowMap;  // Map to store container ID to row index
+    QMap<QString, int> containerIdToRowMap;
 
     void addControlButtons(int row);
 };

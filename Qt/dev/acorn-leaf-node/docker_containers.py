@@ -108,36 +108,62 @@ def get_container_stats():
         print(f"Error: {str(e)}", file.sys.stderr)
         return []
 
-# Retrieves the creation time of a specific container by its ID
-# Example terminal usage: python script_name.py -c get_container_creation_time abc123
-# Example output: {"container_id": "abc123", "creation_time": "2023-08-27 10:00:00"}
-def get_container_creation_time(container_id):
+def get_container_info(container_id):
     try:
+        # Use docker inspect to get detailed information about the container
         result = subprocess.run(
             ['docker', 'inspect', container_id],
             stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
         )
         if result.returncode != 0:
             print(f"Error inspecting container {container_id}: {result.stderr}", file=sys.stderr)
-            return "N/A"
+            return {}
 
-        container_info = json.loads(result.stdout)
-        creation_time_str = container_info[0]["State"]["StartedAt"]
+        # Load the JSON output from docker inspect
+        container_info = json.loads(result.stdout)[0]
 
-        # Use regex to remove fractional seconds before the timezone info
-        creation_time_str = re.sub(r'\.\d+', '', creation_time_str)
+        # Extract necessary fields from the JSON output
+        status = container_info["State"]["Status"]
+        running = container_info["State"]["Running"]
+        paused = container_info["State"]["Paused"]
+        restarting = container_info["State"]["Restarting"]
+        created_str = container_info["Created"]
+        started_at_str = container_info["State"]["StartedAt"]
+        finished_at_str = container_info["State"]["FinishedAt"]
+        image = container_info["Image"]
 
-        # Parse the cleaned string into a datetime object
-        creation_time = datetime.fromisoformat(creation_time_str.replace('Z', '+00:00'))
+        # Function to format ISO 8601 time strings to "YYYY-MM-DD HH:MM:SS"
+        def format_time(iso_time_str):
+            if not iso_time_str or iso_time_str == "0001-01-01T00:00:00Z":
+                return None
+            # Remove fractional seconds and parse the time string
+            iso_time_str = re.sub(r'\.\d+', '', iso_time_str)  # Remove fractional seconds
+            time_obj = datetime.fromisoformat(iso_time_str.rstrip('Z'))  # Convert to datetime
+            return time_obj.strftime("%Y-%m-%d %H:%M:%S")
 
-        # Format the creation time as "YYYY-MM-DD HH:MM:SS"
-        formatted_time = creation_time.strftime("%Y-%m-%d %H:%M:%S")
-        return formatted_time
+        # Format the datetime strings
+        created = format_time(created_str)
+        started_at = format_time(started_at_str)
+        finished_at = format_time(finished_at_str) if finished_at_str else None
+
+        # Construct the container details dictionary
+        container_details = {
+            "container_id": container_id,
+            "status": status,
+            "running": running,
+            "paused": paused,
+            "restarting": restarting,
+            "created": created,
+            "started_at": started_at,
+            "finished_at": finished_at,
+            "image": image
+        }
+
+        return container_details
 
     except Exception as e:
-        print(f"Failed to get creation time for container {container_id}: {e}", file=sys.stderr)
-        return "N/A"
-
+        print(f"Failed to get container info for container {container_id}: {e}", file=sys.stderr)
+        return {}
 if __name__ == "__main__":
     if '-c' in sys.argv:
         command = sys.argv[sys.argv.index('-c') + 1]
@@ -151,10 +177,10 @@ if __name__ == "__main__":
         elif command == 'get_container_stats':
             stats = get_container_stats()
             print(json.dumps(stats))  # Serialize as JSON
-        elif command == 'get_container_creation_time':
+        if command == 'get_container_info':
             container_id = sys.argv[sys.argv.index('-c') + 2]  # Assume container_id is passed after the command
-            creation_time = get_container_creation_time(container_id)
-            print(json.dumps({"container_id": container_id, "creation_time": creation_time}))  # Serialize as JSON
+            container_info = get_container_info(container_id)
+            print(json.dumps(container_info))  # Serialize as JSON
         else:
             print("Invalid command")
     else:
