@@ -313,6 +313,12 @@
 			null
 		],
 		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/CardButton.h",
+			"MU",
+			"EWIEGA46WW/moc_CardButton.cpp",
+			null
+		],
+		[
 			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Components.h",
 			"MU",
 			"EWIEGA46WW/moc_Components.cpp",
@@ -334,6 +340,12 @@
 			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/DashboardTable.h",
 			"MU",
 			"EWIEGA46WW/moc_DashboardTable.cpp",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/HashProof.h",
+			"MU",
+			"EWIEGA46WW/moc_HashProof.cpp",
 			null
 		],
 		[
@@ -394,6 +406,24 @@
 			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Terminal.h",
 			"MU",
 			"EWIEGA46WW/moc_Terminal.cpp",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/TimeTracker.h",
+			"MU",
+			"EWIEGA46WW/moc_TimeTracker.cpp",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/TrayIcon.h",
+			"MU",
+			"EWIEGA46WW/moc_TrayIcon.cpp",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Wallet.h",
+			"MU",
+			"EWIEGA46WW/moc_Wallet.cpp",
 			null
 		]
 	],
@@ -467,6 +497,11 @@
 			null
 		],
 		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/CardButton.cpp",
+			"MU",
+			null
+		],
+		[
 			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Components.cpp",
 			"MU",
 			null
@@ -478,6 +513,11 @@
 		],
 		[
 			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/DashboardTable.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/HashProof.cpp",
 			"MU",
 			null
 		],
@@ -528,6 +568,21 @@
 		],
 		[
 			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Terminal.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/TimeTracker.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/TrayIcon.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Wallet.cpp",
 			"MU",
 			null
 		],

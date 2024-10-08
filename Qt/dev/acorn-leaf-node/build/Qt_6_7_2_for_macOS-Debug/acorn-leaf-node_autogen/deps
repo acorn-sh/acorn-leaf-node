@@ -98,6 +98,8 @@ acorn-leaf-node_autogen/timestamp: \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/BlockchainManager.cpp \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/BlockchainManager.h \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/CMakeLists.txt \
+	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/CardButton.cpp \
+	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/CardButton.h \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Components.cpp \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Components.h \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/ContainerInfo.h \
@@ -105,6 +107,8 @@ acorn-leaf-node_autogen/timestamp: \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/DashboardPage.h \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/DashboardTable.cpp \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/DashboardTable.h \
+	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/HashProof.cpp \
+	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/HashProof.h \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/HelpPage.cpp \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/HelpPage.h \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/HubPage.cpp \
@@ -125,6 +129,12 @@ acorn-leaf-node_autogen/timestamp: \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/SettingsPage.h \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Terminal.cpp \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Terminal.h \
+	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/TimeTracker.cpp \
+	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/TimeTracker.h \
+	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/TrayIcon.cpp \
+	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/TrayIcon.h \
+	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Wallet.cpp \
+	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/Wallet.h \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug/.qtc/package-manager/auto-setup.cmake \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake \
@@ -133,17 +143,24 @@ acorn-leaf-node_autogen/timestamp: \
 	/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/resources.qrc \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QCoreApplication \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QDir \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QList \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QMap \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QObject \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QPoint \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QProcess \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QProcessEnvironment \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QPropertyAnimation \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QRect \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QSettings \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QSize \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QSizeF \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QString \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QStringList \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/q20functional.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/q20memory.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/q20type_traits.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/q23utility.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qabstractanimation.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qabstractitemmodel.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qalgorithms.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qanystringview.h \
@@ -180,6 +197,7 @@ acorn-leaf-node_autogen/timestamp: \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qdeadlinetimer.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qdebug.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qdir.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qeasingcurve.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qelapsedtimer.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qendian.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qeventloop.h \
@@ -226,6 +244,7 @@ acorn-leaf-node_autogen/timestamp: \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qpoint.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qprocess.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qprocessordetection.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qpropertyanimation.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qrect.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qrefcount.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qregularexpression.h \
@@ -275,45 +294,67 @@ acorn-leaf-node_autogen/timestamp: \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qurl.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qutf8stringview.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qvariant.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qvariantanimation.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qvarlengtharray.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qversiontagging.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qxptype_traits.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qyieldcpu.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/QEnterEvent \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/QIcon \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/QMouseEvent \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/QPainter \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/QPixmap \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/QTransform \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qaction.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qbitmap.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qbrush.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qcolor.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qcursor.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qevent.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qeventpoint.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qfont.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qfontinfo.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qfontmetrics.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qguiapplication.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qguiapplication_platform.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qicon.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qimage.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qinputdevice.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qinputmethod.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qkeysequence.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpaintdevice.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpainter.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpalette.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpen.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpicture.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpixelformat.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpixmap.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpointingdevice.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpolygon.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qregion.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qrgb.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qrgba64.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qscreen.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qscreen_platform.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtextdocument.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtextoption.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtgui-config.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtguiexports.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtransform.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qvalidator.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qvector2d.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qvectornd.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QCheckBox \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QDialog \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QHBoxLayout \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QLabel \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QMainWindow \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QMenu \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QProgressBar \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QPushButton \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QSystemTrayIcon \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QTableWidget \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QWidget \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qabstractbutton.h \
@@ -331,6 +372,7 @@ acorn-leaf-node_autogen/timestamp: \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qlayout.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qlayoutitem.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qmainwindow.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qmenu.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qprogressbar.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qpushbutton.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qrubberband.h \
@@ -338,6 +380,7 @@ acorn-leaf-node_autogen/timestamp: \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qslider.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qstyle.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qstyleoption.h \
+	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qsystemtrayicon.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qtabbar.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qtableview.h \
 	/Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qtablewidget.h \
