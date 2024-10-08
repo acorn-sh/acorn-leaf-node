@@ -1,4 +1,4 @@
-/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug/acorn-leaf-node_autogen/EWIEGA46WW/moc_mainwindow.cpp: /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/mainwindow.h \
+/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug/acorn-leaf-node_autogen/EWIEGA46WW/moc_MainWindow.cpp: /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/MainWindow.h \
   /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug/acorn-leaf-node_autogen/moc_predefs.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/Availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/AvailabilityInternal.h \
@@ -91,16 +91,14 @@
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/syslimits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/wait.h \
-  /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/accountpage.h \
-  /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/containertable.h \
-  /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/hubpage.h \
-  /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/mainbuttons.h \
-  /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/settingspage.h \
-  /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/terminal.h \
-  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QMap \
+  /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/ResourceManager.h \
+  /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/TrayIcon.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QCoreApplication \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QDir \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QObject \
-  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QProcess \
-  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QTimer \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QProcessEnvironment \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QString \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QStringList \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/q20functional.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/q20memory.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/q20type_traits.h \
@@ -114,12 +112,12 @@
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qatomic.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qatomic_cxx11.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qbasicatomic.h \
-  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qbasictimer.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qbindingstorage.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qbytearray.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qbytearrayalgorithms.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qbytearraylist.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qbytearrayview.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qcalendar.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qchar.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qcompare.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qcompare_impl.h \
@@ -131,11 +129,22 @@
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qcontainerinfo.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qcontainertools_impl.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qcontiguouscache.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qcoreapplication.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qcoreapplication_platform.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qcoreevent.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qdarwinhelpers.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qdatastream.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qdatetime.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qdeadlinetimer.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qdebug.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qdir.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qelapsedtimer.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qendian.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qeventloop.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qexceptionhandling.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qfile.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qfiledevice.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qfileinfo.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qflags.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qfloat16.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qforeach.h \
@@ -153,6 +162,7 @@
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qlatin1stringview.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qline.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qlist.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qlocale.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qlogging.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qmalloc.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qmap.h \
@@ -162,6 +172,7 @@
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qmetatype.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qminmax.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qnamespace.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qnativeinterface.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qnumeric.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qobject.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qobject_impl.h \
@@ -205,7 +216,7 @@
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtdeprecationmarkers.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtenvironmentvariables.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtextstream.h \
-  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtimer.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtimezone.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtmetamacros.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtnoop.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtpreprocessorsupport.h \
@@ -216,13 +227,13 @@
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtversionchecks.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtypeinfo.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtypes.h \
-  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qurl.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qutf8stringview.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qvariant.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qvarlengtharray.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qversiontagging.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qxptype_traits.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qyieldcpu.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/QIcon \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qaction.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qbitmap.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qbrush.h \
@@ -236,30 +247,24 @@
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qkeysequence.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpaintdevice.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpalette.h \
-  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpicture.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpixelformat.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpixmap.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpolygon.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qregion.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qrgb.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qrgba64.h \
-  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtextdocument.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtgui-config.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtguiexports.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtransform.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
-  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QLabel \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QMainWindow \
-  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QProgressBar \
-  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QPushButton \
-  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qabstractbutton.h \
-  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qframe.h \
-  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qlabel.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QMenu \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QSystemTrayIcon \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qmainwindow.h \
-  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qprogressbar.h \
-  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qpushbutton.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qmenu.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qsizepolicy.h \
+  /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qsystemtrayicon.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qtabwidget.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgets-config.h \
   /Users/platon1/DEV/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsexports.h \

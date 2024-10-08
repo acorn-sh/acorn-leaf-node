@@ -39,13 +39,6 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE DIRECTORY FILES "/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug/acorn-leaf-node.app" USE_SOURCE_PERMISSIONS)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./acorn-leaf-node.app/Contents/MacOS/acorn-leaf-node" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./acorn-leaf-node.app/Contents/MacOS/acorn-leaf-node")
-    execute_process(COMMAND /usr/bin/install_name_tool
-      -delete_rpath "/Users/platon1/DEV/Qt/6.7.2/macos/lib"
-      -add_rpath "@executable_path/../Frameworks"
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./acorn-leaf-node.app/Contents/MacOS/acorn-leaf-node")
-  endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

@@ -1,4 +1,4 @@
-/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug/acorn-leaf-node_autogen/EWIEGA46WW/moc_helppage.cpp: /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/helppage.h \
+/Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug/acorn-leaf-node_autogen/EWIEGA46WW/moc_HelpPage.cpp: /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/HelpPage.h \
   /Users/platon1/DEV/GITHUB/ACORN/acorn-leaf-node/Qt/dev/acorn-leaf-node/build/Qt_6_7_2_for_macOS-Debug/acorn-leaf-node_autogen/moc_predefs.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/Availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/AvailabilityInternal.h \
